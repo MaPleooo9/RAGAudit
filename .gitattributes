@@ -1,0 +1,7 @@
+# 统一行尾，避免 Windows 检出后 git status 满屏改动
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.ico binary
+*.woff2 binary
