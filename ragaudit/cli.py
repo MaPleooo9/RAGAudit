@@ -218,7 +218,7 @@ def cmd_ablate(args: argparse.Namespace) -> int:
 def build_parser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(
         prog="ragaudit",
-        description="检索评测审计台：查你的分，而不是给你一个分。",
+        description="检索评测审计工具：查你的分，而不是给你一个分。",
     )
     sub = ap.add_subparsers(dest="cmd", required=True)
 
