@@ -193,6 +193,14 @@ def render_report(
             f"修好 {len(diff.fixed)} 条，弄坏 {len(diff.broke)} 条，"
             f"净 {diff.net:+d} 条。\n"
         )
+        # 排名变动不改变 Hit@1，但它是「改动的副作用」最灵敏的信号：
+        # 一条从 rank 1 掉到 rank 4 仍然算命中，可它已经在退化边缘了。
+        # 只报总数会把这类信息吞掉，所以单独列出来。
+        if diff.improved or diff.worsened:
+            L.append(
+                f"另有 {len(diff.improved)} 条排名前移、"
+                f"{len(diff.worsened)} 条排名后退（仍命中，但位置变了）。\n"
+            )
         if diff.suspicious:
             L.append(
                 f"> 注意：本次运行移除了 {len(diff.removed)} 条题目。"
@@ -212,6 +220,22 @@ def render_report(
                 ["提问", "期望", "现在排名"],
                 [[_cell(e.query), e.expect_target or "任意", f"rank {e.after_rank}"]
                  for e in diff.fixed[:20]],
+            ))
+        if diff.improved:
+            L.append("\n### 排名前移的\n")
+            L.append(md_table(
+                ["提问", "期望", "之前", "现在"],
+                [[_cell(e.query), e.expect_target or "任意",
+                  f"rank {e.before_rank}", f"rank {e.after_rank}"]
+                 for e in diff.improved[:20]],
+            ))
+        if diff.worsened:
+            L.append("\n### 仍命中但排名后退的\n")
+            L.append(md_table(
+                ["提问", "期望", "之前", "现在"],
+                [[_cell(e.query), e.expect_target or "任意",
+                  f"rank {e.before_rank}", f"rank {e.after_rank}"]
+                 for e in diff.worsened[:20]],
             ))
         if diff.added:
             L.append(f"\n本次新增 {len(diff.added)} 条题目，"

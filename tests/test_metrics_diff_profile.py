@@ -205,5 +205,36 @@ class TestAblate(unittest.TestCase):
         self.assertGreater(c["hit1"], 0)
 
 
+class TestReport(unittest.TestCase):
+    def test_diff_renders_rank_shifts(self):
+        """排名前移/后退不改变 Hit@1，但改动的副作用往往先在这里露头。
+
+        真实案例里就出现过：关掉别名表后 Hit@1 掉 3 条，同时还有 1 条
+        从 rank 2 升到 1、1 条从 rank 1 掉到 4——只报「修好/弄坏」会把
+        这两条吞掉。
+        """
+        from ragaudit.report import render_report
+
+        s = suite_of(Case("升位", "l1", "甲"), Case("降位", "l1", "乙"))
+        before = run_suite(s, const_retriever({
+            "升位": [{"layer": "l1", "target": "错"}, {"layer": "l1", "target": "甲"}],
+            "降位": [{"layer": "l1", "target": "乙"}],
+        }), k=5)
+        after = run_suite(s, const_retriever({
+            "升位": [{"layer": "l1", "target": "甲"}],
+            "降位": [{"layer": "l1", "target": "错1"}, {"layer": "l1", "target": "错2"},
+                     {"layer": "l1", "target": "错3"}, {"layer": "l1", "target": "乙"}],
+        }), k=5)
+
+        d = diff_runs(before, after)
+        self.assertEqual([e.query for e in d.improved], ["升位"])
+        self.assertEqual([e.query for e in d.worsened], ["降位"])
+
+        md = render_report(after, after.rubrics, diff=d)
+        self.assertIn("排名前移", md)
+        self.assertIn("排名后退", md)
+        self.assertIn("rank 1", md)
+
+
 if __name__ == "__main__":
     unittest.main()
