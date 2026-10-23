@@ -37,6 +37,25 @@ v2 无别名       lenient Hit@1 80.0% | strict Hit@1 70.0% | 虚高 10.0pp | MR
 
 ---
 
+## 一个真实案例
+
+拿一个已经上线的本地 RAG 系统做过完整审计（NaviRAG v1.0.1：8428 条三层知识库，
+自报 Hit@1 94.1%，85 条人工评估集，原样未改）：
+
+| 问题 | 审计结果 |
+|---|---|
+| 94.1% 是不是口径撑大的？ | **不是**。两套口径差 1.2pp，而这 1.2pp 还来自本工具的严格口径误判 |
+| 这分是谁挣的？ | **76.5pp 来自实体名硬匹配**：关掉它，整条链路只剩 17.6%（纯向量 12.9%） |
+| 真实泛化水平？ | 「描述提问」组（整句不含实体名）**Hit@1 只有 50%**，3 条未命中全落在这组 |
+| 哪个模块白占位置？ | 术语增强 ΔHit@1 = **±0.0**，MRR 只差 0.004 |
+| 哪个部件最脆？ | 手工别名表值 3.5pp，关掉立刻坏 3 条，全部是俗称题 |
+
+**工具独立算出的五个数字，与该项目自评报告逐位吻合**（12.9 / 17.6 / 90.6 / 94.1 / MRR 0.951），
+差异全部来自本工具额外提供的信息。完整报告与分析：
+[`docs/case-navirag.md`](docs/case-navirag.md)。
+
+---
+
 ## 它解决什么
 
 | 你遇到的问题 | 现有做法 | RAGAudit 的做法 |
@@ -128,6 +147,10 @@ ragaudit run -s my_suite.json -r mypkg.retr:search -o report.md --json run.json
 返回对象也支持：dict、dataclass、任何带同名属性的对象都能被自动归一化。
 字段名不一样时，用 `Doc.from_any(obj, field_map=...)` 指定映射。
 
+需要连真实向量库和 embedding 模型的接入样例，看
+[`examples/elden-ring/navireg_retriever.py`](examples/elden-ring/navireg_retriever.py)
+——它连着 ChromaDB，`ragaudit` 侧仍然零依赖，重依赖只出现在被测系统那一侧。
+
 ### 评估集格式
 
 ```json
@@ -173,17 +196,47 @@ ragaudit run -s my_suite.json -r mypkg.retr:search -o report.md --json run.json
 
 ---
 
+## 和 RAGAS / DeepEval 的关系
+
+它们是量**答案**的，这里量**分数本身**。不替代，可叠加：
+
+| | RAGAudit | RAGAS | DeepEval |
+|---|---|---|---|
+| 判定方式 | 确定性硬指标，**不调 LLM** | LLM-as-judge | LLM-as-judge（含 G-Eval） |
+| 看什么 | 召回哪一条 | 答案是否有据、是否切题 | 整条链路 + Agent 行为 |
+| 可复现 | 完全相同输入 → 完全相同输出 | 换 judge 就换尺子 | 同 |
+| 依赖 | **零** | ragas / datasets | deepeval |
+| 双口径量虚高 | ✅ | ❌ | ❌ |
+| 题库泄漏画像 | ✅ | ❌ | ❌ |
+| 删题涨分检测 | ✅ | ❌ | ❌ |
+
+推荐分工：**RAGAudit 守检索不退化（秒级、可进 CI），RAGAS / DeepEval 守答案不退化。**
+完整对照（含各框架的指标口径差异与「为什么不用 LLM 打分」）见
+[`docs/comparison.md`](docs/comparison.md)。
+
+---
+
 ## 开发
 
 ```bash
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
-33 个用例，零依赖，0.01 秒跑完。CI 见 `.github/workflows/ci.yml`。
+34 个用例，零依赖，0.01 秒跑完。CI 见 `.github/workflows/ci.yml`。
+
+文档：
+
+| 文件 | 内容 |
+|---|---|
+| [`docs/metrics.md`](docs/metrics.md) | 每个指标怎么算、为什么这么算 |
+| [`docs/architecture.md`](docs/architecture.md) | 模块划分与数据流 |
+| [`docs/case-navirag.md`](docs/case-navirag.md) | 真实案例：审计一个 94.1% 的系统 |
+| [`docs/comparison.md`](docs/comparison.md) | vs RAGAS / DeepEval |
+| [`docs/licenses.md`](docs/licenses.md) | 依赖许可证清单与合规结论 |
 
 ---
 
 ## 许可证
 
-[Apache-2.0](LICENSE)。贡献前请读 [CONTRIBUTING.md](CONTRIBUTING.md)，
-长期规划见 [ROADMAP.md](ROADMAP.md)。
+[Apache-2.0](LICENSE)，运行时零第三方依赖（清单见 [`docs/licenses.md`](docs/licenses.md)）。
+贡献前请读 [CONTRIBUTING.md](CONTRIBUTING.md)，长期规划见 [ROADMAP.md](ROADMAP.md)。

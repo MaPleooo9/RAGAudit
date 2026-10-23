@@ -5,6 +5,25 @@
 
 ## [Unreleased]
 
+### Added
+
+**真实案例（NaviRAG）**
+- `examples/elden-ring/navireg_retriever.py`：把 NaviRAG 线上检索器接进本工具的适配器，
+  含 5 个只改一个变量的消融变体
+- 85 条评估集（原样未改，与 NaviRAG 仓库逐字节一致）跑出真实报告、消融、回归 diff
+- `docs/case-navirag.md`：审计结论与和原项目自评报告的逐项交叉验证
+  （12.9% / 17.6% / 90.6% / 94.1% / MRR 0.951 五项逐位吻合）
+
+**文档**
+- `docs/comparison.md`：与 RAGAS / DeepEval 的能力对照、指标口径差异、分工建议
+- `docs/licenses.md` + `docs/licenses-deps.txt`：运行时零依赖说明、真实案例 103 个
+  传递依赖的许可证清单（机器生成）、无 GPL/AGPL 的合规结论
+
+### Fixed
+- 回归对比报告只渲染 `fixed` / `broke`，`improved` / `worsened`（仍命中但排名变动）
+  被算出来后丢弃。真实案例里正好踩中：关掉别名表后 3 条坏掉、1 条 rank 2→1、
+  1 条 rank 1→4，后两条原本完全不可见
+
 ### 计划中
 - LangChain / LlamaIndex / Chroma 结果适配器
 - HTML 报告输出
