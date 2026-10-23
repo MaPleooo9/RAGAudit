@@ -13,7 +13,7 @@
 - [x] 逐条回归 diff（含 `removed` 检测）
 - [x] 评估集自检 `lint`
 - [x] CLI 四个子命令，零运行时依赖
-- [ ] 用真实 RAG 项目跑通并公开案例报告
+- [x] 用真实 RAG 项目跑通并公开案例报告（[NaviRAG](docs/case-navirag.md)：85 条题、8428 条知识库）
 
 ## v0.2 — 接得上
 

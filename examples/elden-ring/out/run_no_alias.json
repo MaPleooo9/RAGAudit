@@ -1,0 +1,3757 @@
+{
+  "suite_name": "suite",
+  "k": 5,
+  "rubrics": [
+    "lenient",
+    "strict"
+  ],
+  "retriever": "NaviRAG −alias（关俗称表）",
+  "created_at": "2026-10-23T21:19:15",
+  "meta": {
+    "about": "检索评估集。每条 = 一个真实问法 + 期望命中的层 + 期望命中的目标（规范名，已去称号）。\n「口语俗称」「描述提问」两组是刻意补的难度组：前者测别名覆盖，后者完全不含实体名，是实体硬置顶会失效的题型，它们的通过率才是真实泛化能力的体现。"
+  },
+  "cases": [
+    {
+      "id": "c610154d8222",
+      "query": "玛莲妮亚怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "玛莲妮亚",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "玛莲妮亚",
+          "title": "冰霜踏地压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "玛莲妮亚",
+          "title": "冻伤壶 + 仿身泪滴无脑流"
+        },
+        {
+          "layer": "l2",
+          "target": "玛莲妮亚",
+          "title": "双持大剑跳劈锁血"
+        },
+        {
+          "layer": "l3",
+          "target": "玛莲妮亚",
+          "title": "轻装单挑流（翻滚抓后摇）"
+        },
+        {
+          "layer": "l2",
+          "target": "拉塔恩",
+          "title": "腐败吐息逃课流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "4f728107f78b",
+      "query": "拉塔恩怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "拉塔恩",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "拉塔恩",
+          "title": "腐败吐息逃课流"
+        },
+        {
+          "layer": "l2",
+          "target": "拉塔恩",
+          "title": "全员 NPC + 腐败磨血流"
+        },
+        {
+          "layer": "l2",
+          "target": "满月女王蕾娜菈",
+          "title": "贴身压制流"
+        },
+        {
+          "layer": "l3",
+          "target": "拉塔恩",
+          "title": "召唤群殴流（设计本意打法）"
+        },
+        {
+          "layer": "l2",
+          "target": "葛瑞克",
+          "title": "腐败吐息消耗流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "04a6d9b43df4",
+      "query": "大树守卫怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "大树守卫",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "大树守卫",
+          "title": "灵马远程风筝"
+        },
+        {
+          "layer": "l2",
+          "target": "龙装大树守卫",
+          "title": "骑马绕后蓄力流"
+        },
+        {
+          "layer": "l2",
+          "target": "铃珠猎人",
+          "title": "魔像弓箭摔死流"
+        },
+        {
+          "layer": "l2",
+          "target": "接肢贵族",
+          "title": "跳树上射箭"
+        },
+        {
+          "layer": "l3",
+          "target": "大树守卫",
+          "title": "下马绕腿流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "a753b10f7f2e",
+      "query": "龙装大树守卫怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "龙装大树守卫",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "龙装大树守卫",
+          "title": "骑马绕后蓄力流"
+        },
+        {
+          "layer": "l2",
+          "target": "大树守卫",
+          "title": "灵马远程风筝"
+        },
+        {
+          "layer": "l2",
+          "target": "铃珠猎人",
+          "title": "魔像弓箭摔死流"
+        },
+        {
+          "layer": "l2",
+          "target": "飞龙桂雷尔",
+          "title": "大树诱摔流"
+        },
+        {
+          "layer": "l2",
+          "target": "接肢贵族",
+          "title": "跳树上射箭"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "f636e0163791",
+      "query": "熔炉骑士怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "熔炉骑士",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "熔炉骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "熔炉骑士",
+          "title": "弹反处决流"
+        },
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "猎犬骑士",
+          "title": "门框卡位流"
+        },
+        {
+          "layer": "l2",
+          "target": "拉塔恩",
+          "title": "腐败吐息逃课流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "b79d542a67cf",
+      "query": "神皮双人组怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "神皮双人组",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "神皮双人组",
+          "title": "出血速杀流"
+        },
+        {
+          "layer": "l2",
+          "target": "神皮双人组",
+          "title": "睡眠逐个击破流"
+        },
+        {
+          "layer": "l2",
+          "target": "神皮贵族",
+          "title": "跳关逃课流"
+        },
+        {
+          "layer": "l2",
+          "target": "神皮使徒",
+          "title": "睡眠壶控场流"
+        },
+        {
+          "layer": "l3",
+          "target": "神皮双人组",
+          "title": "柱廊分割流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "ba14b13fb901",
+      "query": "王室幽魂怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "王室幽魂",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "王室幽魂",
+          "title": "治疗祷告秒杀流"
+        },
+        {
+          "layer": "l2",
+          "target": "老将尼奥",
+          "title": "隐身先清召唤流"
+        },
+        {
+          "layer": "l2",
+          "target": "铁处女传送（跳关，非战斗）",
+          "title": "宝箱铁处女直达深根底层"
+        },
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "恶兆妖鬼玛尔基特",
+          "title": "玛尔基特的枷锁压制流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "9785a828fe4c",
+      "query": "结晶人怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "结晶人",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "结晶人",
+          "title": "打击武器破防流"
+        },
+        {
+          "layer": "l2",
+          "target": "满月女王蕾娜菈",
+          "title": "贴身压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "祖灵",
+          "title": "找本体逐个击破流"
+        },
+        {
+          "layer": "l2",
+          "target": "铁处女传送（跳关，非战斗）",
+          "title": "宝箱铁处女直达深根底层"
+        },
+        {
+          "layer": "l2",
+          "target": "老将欧尼尔",
+          "title": "腐败风筝流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "f61c0391c67f",
+      "query": "英雄石像鬼怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "英雄石像鬼",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "英雄石像鬼",
+          "title": "安眠曲分割流"
+        },
+        {
+          "layer": "l2",
+          "target": "英雄石像鬼",
+          "title": "毒雾磨血流"
+        },
+        {
+          "layer": "l2",
+          "target": "铃珠猎人",
+          "title": "魔像弓箭摔死流"
+        },
+        {
+          "layer": "l2",
+          "target": "飞龙桂雷尔",
+          "title": "大树诱摔流"
+        },
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "0043f096f0ba",
+      "query": "黑剑眷属怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "黑剑眷属",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "黑剑眷属",
+          "title": "灵马远程风筝流"
+        },
+        {
+          "layer": "l2",
+          "target": "玛利喀斯",
+          "title": "出血速杀流"
+        },
+        {
+          "layer": "l2",
+          "target": "腐败眷属",
+          "title": "火焰压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "恶兆猎人",
+          "title": "弹反背刺流"
+        },
+        {
+          "layer": "l2",
+          "target": "蒙葛特",
+          "title": "玛尔基特的枷锁压制流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "9593a0eafefa",
+      "query": "老将尼奥怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "老将尼奥",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "老将尼奥",
+          "title": "隐身先清召唤流"
+        },
+        {
+          "layer": "l2",
+          "target": "老将欧尼尔",
+          "title": "腐败风筝流"
+        },
+        {
+          "layer": "l3",
+          "target": "老将尼奥",
+          "title": "先斩随从流"
+        },
+        {
+          "layer": "l2",
+          "target": "葛瑞克",
+          "title": "老寒腿逃课流"
+        },
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "40cd5152c11b",
+      "query": "恶兆猎人怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "恶兆猎人",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "恶兆猎人",
+          "title": "弹反背刺流"
+        },
+        {
+          "layer": "l2",
+          "target": "铃珠猎人",
+          "title": "魔像弓箭摔死流"
+        },
+        {
+          "layer": "l2",
+          "target": "恶兆妖鬼玛尔基特",
+          "title": "玛尔基特的枷锁压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "蒙葛特",
+          "title": "玛尔基特的枷锁压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "恶兆妖鬼玛尔基特",
+          "title": "出血双持压制流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "f076c794bf42",
+      "query": "卢恩熊怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "卢恩熊",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "卢恩熊",
+          "title": "洞口卡位流"
+        },
+        {
+          "layer": "l2",
+          "target": "拉塔恩",
+          "title": "腐败吐息逃课流"
+        },
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "恶兆妖鬼玛尔基特",
+          "title": "玛尔基特的枷锁压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "飞龙桂雷尔",
+          "title": "大树诱摔流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "1a45b39321a5",
+      "query": "穿刺者米德拉怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "穿刺者米德拉",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "穿刺者米德拉",
+          "title": "黄金树大盾反弹流"
+        },
+        {
+          "layer": "l2",
+          "target": "穿刺者梅瑟莫",
+          "title": "出血召唤流"
+        },
+        {
+          "layer": "l2",
+          "target": "玛莲妮亚",
+          "title": "冰霜踏地压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "发狂南瓜头士兵",
+          "title": "引燃自损流"
+        },
+        {
+          "layer": "l2",
+          "target": "拉塔恩",
+          "title": "腐败吐息逃课流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "537f29279c9c",
+      "query": "腐烂树灵怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "腐烂树灵",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "腐烂树灵",
+          "title": "走廊卡位火焰流"
+        },
+        {
+          "layer": "l2",
+          "target": "铃珠猎人",
+          "title": "魔像弓箭摔死流"
+        },
+        {
+          "layer": "l2",
+          "target": "黄金树的化身",
+          "title": "火焰克制流"
+        },
+        {
+          "layer": "l2",
+          "target": "穿刺者梅瑟莫",
+          "title": "出血召唤流"
+        },
+        {
+          "layer": "l2",
+          "target": "葛瑞克",
+          "title": "腐败吐息消耗流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "eae369689f34",
+      "query": "玛莲妮亚怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "玛莲妮亚",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "玛莲妮亚",
+          "title": "轻装单挑流（翻滚抓后摇）"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“米凯拉的锋刃”玛莲妮亚"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "受黄金树雕琢的“腐败女神”玛莲妮亚的追忆"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "玛莲妮亚身为腐败女神的招式。能绽放大株花"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“米凯拉的锋刃”玛莲妮亚"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "7b555e41063d",
+      "query": "拉塔恩怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "拉塔恩",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "拉塔恩",
+          "title": "召唤群殴流（设计本意打法）"
+        },
+        {
+          "layer": "l3",
+          "target": "约定之王拉塔恩",
+          "title": "双阶段贴身流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“碎星”拉塔恩"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Promised Consort Radahn"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“碎星”拉塔恩"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "77f0bd2b5546",
+      "query": "恶兆王蒙葛特怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "蒙葛特",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "蒙葛特",
+          "title": "近战抓硬直流"
+        },
+        {
+          "layer": "l3",
+          "target": "恶兆妖鬼玛尔基特",
+          "title": "弹反惩罚流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“恶兆王”蒙葛特"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "受黄金树雕琢的“恶兆王”蒙葛特的追忆。透"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“恶兆王”蒙葛特"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "f9f666f9204a",
+      "query": "黑剑玛利喀斯怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "玛利喀斯",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "玛利喀斯",
+          "title": "贴身压制流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“黑剑”玛利喀斯"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "寄宿命定之死的玛利喀斯的黑剑。在阴谋之夜"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“黑剑”玛利喀斯"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "黑剑眷属"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "714bbfed5021",
+      "query": "血王蒙格怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "蒙格",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "蒙格",
+          "title": "近战绕背流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "蒙格温王朝庙"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "受黄金树雕琢的“鲜血君王”蒙格的追忆。透"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“鲜血君王”蒙格的神圣祷告。将手伸进无形"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“鲜血君王”蒙格"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "c07b2126d91e",
+      "query": "玛莲妮亚不逃课怎么打",
+      "group": "否定表达",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "玛莲妮亚",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "玛莲妮亚",
+          "title": "轻装单挑流（翻滚抓后摇）"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“米凯拉的锋刃”玛莲妮亚"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "受黄金树雕琢的“腐败女神”玛莲妮亚的追忆"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "玛莲妮亚身为腐败女神的招式。能绽放大株花"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“米凯拉的锋刃”玛莲妮亚"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "ad331d9faf3b",
+      "query": "我想学拉塔恩的正常打法",
+      "group": "否定表达",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "拉塔恩",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "拉塔恩",
+          "title": "召唤群殴流（设计本意打法）"
+        },
+        {
+          "layer": "l3",
+          "target": "约定之王拉塔恩",
+          "title": "双阶段贴身流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“碎星”拉塔恩"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "专用战技：拉塔恩的骤雨压低身形拉弓的战技"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "受黄金树雕琢的“碎星”拉塔恩的追忆。透过"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "17c18767630b",
+      "query": "不用轮椅怎么打蒙格",
+      "group": "否定表达",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "蒙格",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "蒙格",
+          "title": "近战绕背流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "蒙格温王朝庙"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "受黄金树雕琢的“鲜血君王”蒙格的追忆。透"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“鲜血君王”蒙格的神圣祷告。将手伸进无形"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“碎片君王”蒙格的大卢恩。透过恩惠的效力"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "af54b122a247",
+      "query": "大树守卫正常打法",
+      "group": "否定表达",
+      "expect_layers": [
+        "l1",
+        "l3"
+      ],
+      "expect_target": "大树守卫",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "大树守卫",
+          "title": "下马绕腿流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "大树守卫"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "大树守卫"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "用黄金制成的厚重大盾。人称“大树守卫”的"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "大树守卫"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "058ef1f0a80a",
+      "query": "熔炉骑士凭本事怎么打",
+      "group": "否定表达",
+      "expect_layers": [
+        "l1",
+        "l3"
+      ],
+      "expect_target": "熔炉骑士",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "熔炉骑士",
+          "title": "耐心弹反流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "熔炉骑士"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "带有烧熔指痕的铁制铠甲。“圆桌骑士”维克"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "带有烧熔指痕的铁制铠甲。“圆桌骑士”维克"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "带有烧熔指痕的铁制腿甲。“圆桌骑士”维克"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "f83eb640ea2f",
+      "query": "给我最无脑的打法",
+      "group": "无脑度意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "初始之王葛孚雷",
+          "title": "隐身毒雾逃课流"
+        },
+        {
+          "layer": "l2",
+          "target": "铁处女传送（跳关，非战斗）",
+          "title": "宝箱铁处女直达深根底层"
+        },
+        {
+          "layer": "l2",
+          "target": "发狂南瓜头士兵",
+          "title": "引燃自损流"
+        },
+        {
+          "layer": "l2",
+          "target": "王室幽魂",
+          "title": "治疗祷告秒杀流"
+        },
+        {
+          "layer": "l2",
+          "target": "英雄石像鬼",
+          "title": "毒雾磨血流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "f55a6fbe40c6",
+      "query": "手残党有什么推荐",
+      "group": "无脑度意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "初始之王葛孚雷",
+          "title": "隐身毒雾逃课流"
+        },
+        {
+          "layer": "l2",
+          "target": "发狂南瓜头士兵",
+          "title": "引燃自损流"
+        },
+        {
+          "layer": "l2",
+          "target": "神皮双人组",
+          "title": "睡眠逐个击破流"
+        },
+        {
+          "layer": "l2",
+          "target": "王室幽魂",
+          "title": "治疗祷告秒杀流"
+        },
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "9c392aa623a7",
+      "query": "有没有最简单的打法",
+      "group": "无脑度意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "拉卡德",
+          "title": "大蛇狩猎枪站桩流（官方逃课武器）"
+        },
+        {
+          "layer": "l2",
+          "target": "英雄石像鬼",
+          "title": "毒雾磨血流"
+        },
+        {
+          "layer": "l2",
+          "target": "初始之王葛孚雷",
+          "title": "隐身毒雾逃课流"
+        },
+        {
+          "layer": "l2",
+          "target": "铁处女传送（跳关，非战斗）",
+          "title": "宝箱铁处女直达深根底层"
+        },
+        {
+          "layer": "l2",
+          "target": "噬神大蛇",
+          "title": "专用武器压制流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "7ba0df36dcba",
+      "query": "我60级能打大树守卫吗",
+      "group": "等级过滤",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "大树守卫",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "大树守卫",
+          "title": "灵马远程风筝"
+        },
+        {
+          "layer": "l2",
+          "target": "龙装大树守卫",
+          "title": "骑马绕后蓄力流"
+        },
+        {
+          "layer": "l2",
+          "target": "熔炉骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "拉卡德",
+          "title": "大蛇狩猎枪站桩流（官方逃课武器）"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "796d81239872",
+      "query": "30级怎么逃熔炉骑士",
+      "group": "等级过滤",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "熔炉骑士",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "熔炉骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "熔炉骑士",
+          "title": "弹反处决流"
+        },
+        {
+          "layer": "l2",
+          "target": "猎犬骑士",
+          "title": "门框卡位流"
+        },
+        {
+          "layer": "l2",
+          "target": "铁处女传送（跳关，非战斗）",
+          "title": "宝箱铁处女直达深根底层"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "3a0b64db4cfc",
+      "query": "我80级怎么逃课拉塔恩",
+      "group": "等级过滤",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "拉塔恩",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "拉塔恩",
+          "title": "腐败吐息逃课流"
+        },
+        {
+          "layer": "l2",
+          "target": "拉塔恩",
+          "title": "全员 NPC + 腐败磨血流"
+        },
+        {
+          "layer": "l2",
+          "target": "拉卡德",
+          "title": "大蛇狩猎枪站桩流（官方逃课武器）"
+        },
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "发狂南瓜头士兵",
+          "title": "引燃自损流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "ac9481e9a373",
+      "query": "玛莲妮亚的追忆能换什么",
+      "group": "知识问答",
+      "expect_layers": [
+        "l1"
+      ],
+      "expect_target": "玛莲妮亚",
+      "retrieved": [
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "受黄金树雕琢的“腐败女神”玛莲妮亚的追忆"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“米凯拉的锋刃”玛莲妮亚"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "玛莲妮亚身为腐败女神的招式。能绽放大株花"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“碎片君王”玛莲妮亚的大卢恩。因为半陷入"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“米凯拉的锋刃”玛莲妮亚"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 2
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "2f7353873816",
+      "query": "拉塔恩在哪个区域",
+      "group": "知识问答",
+      "expect_layers": [
+        "l1"
+      ],
+      "expect_target": "拉塔恩",
+      "retrieved": [
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "恸哭沙丘"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Rakshasa"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“碎星”拉塔恩"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“碎星”拉塔恩"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "盖利德"
+        }
+      ],
+      "ranks": {
+        "lenient": 3,
+        "strict": 3
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "ce78c8128122",
+      "query": "腐败吐息在哪里拿",
+      "group": "知识问答",
+      "expect_layers": [
+        "l1"
+      ],
+      "expect_target": "",
+      "retrieved": [
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "寄宿着灵魂的骨灰。能召唤腐败野狗的灵魂。"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "寄宿着灵魂的骨灰。能召唤腐败野狗的灵魂。"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "寄宿着灵魂的骨灰。能召唤腐败野狗的灵魂。"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "寄宿着灵魂的骨灰。能召唤腐败野狗的灵魂。"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "寄宿着灵魂的骨灰。能召唤腐败野狗的灵魂。"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "ca5286f6a973",
+      "query": "黑夜骑兵怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "黑夜骑兵",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "黑夜骑兵",
+          "title": "引坠落马流"
+        },
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "龙装大树守卫",
+          "title": "骑马绕后蓄力流"
+        },
+        {
+          "layer": "l2",
+          "target": "飞龙桂雷尔",
+          "title": "大树诱摔流"
+        },
+        {
+          "layer": "l2",
+          "target": "拉塔恩",
+          "title": "腐败吐息逃课流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "dbb82531cce2",
+      "query": "铃珠猎人怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "铃珠猎人",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "铃珠猎人",
+          "title": "魔像弓箭摔死流"
+        },
+        {
+          "layer": "l2",
+          "target": "恶兆猎人",
+          "title": "弹反背刺流"
+        },
+        {
+          "layer": "l2",
+          "target": "猎犬骑士",
+          "title": "门框卡位流"
+        },
+        {
+          "layer": "l2",
+          "target": "拉卡德",
+          "title": "大蛇狩猎枪站桩流（官方逃课武器）"
+        },
+        {
+          "layer": "l2",
+          "target": "黑剑眷属",
+          "title": "灵马远程风筝流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "885561ad9a1f",
+      "query": "唤灵蜗牛怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "唤灵蜗牛",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "唤灵蜗牛",
+          "title": "直冲本体流"
+        },
+        {
+          "layer": "l2",
+          "target": "铃珠猎人",
+          "title": "魔像弓箭摔死流"
+        },
+        {
+          "layer": "l2",
+          "target": "穿刺者梅瑟莫",
+          "title": "出血召唤流"
+        },
+        {
+          "layer": "l2",
+          "target": "铁处女传送（跳关，非战斗）",
+          "title": "宝箱铁处女直达深根底层"
+        },
+        {
+          "layer": "l2",
+          "target": "黑剑眷属",
+          "title": "灵马远程风筝流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "3920102c3611",
+      "query": "墓地影子怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "墓地影子",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "墓地影子",
+          "title": "范围战技压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "英雄石像鬼",
+          "title": "安眠曲分割流"
+        },
+        {
+          "layer": "l2",
+          "target": "死亡仪式鸟",
+          "title": "悬崖石台蹲死流"
+        },
+        {
+          "layer": "l2",
+          "target": "初始之王葛孚雷",
+          "title": "隐身毒雾逃课流"
+        },
+        {
+          "layer": "l2",
+          "target": "归树看门犬",
+          "title": "绕后打腿流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "538e52d42b5b",
+      "query": "拉达冈的红狼怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "拉达冈的红狼",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "拉达冈的红狼",
+          "title": "贴身打断流"
+        },
+        {
+          "layer": "l2",
+          "target": "铃珠猎人",
+          "title": "魔像弓箭摔死流"
+        },
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l3",
+          "target": "拉达冈的红狼",
+          "title": "中距引法流"
+        },
+        {
+          "layer": "l2",
+          "target": "飞龙桂雷尔",
+          "title": "大树诱摔流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "5497814201b9",
+      "query": "狮子混种怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "狮子混种",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "狮子混种",
+          "title": "墓碑弓箭逃课流"
+        },
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "老将尼奥",
+          "title": "隐身先清召唤流"
+        },
+        {
+          "layer": "l2",
+          "target": "铃珠猎人",
+          "title": "魔像弓箭摔死流"
+        },
+        {
+          "layer": "l2",
+          "target": "铁处女传送（跳关，非战斗）",
+          "title": "宝箱铁处女直达深根底层"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "ba8c6cf0b932",
+      "query": "猎犬骑士怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "猎犬骑士",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "猎犬骑士",
+          "title": "门框卡位流"
+        },
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "熔炉骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "熔炉骑士",
+          "title": "弹反处决流"
+        },
+        {
+          "layer": "l2",
+          "target": "玛利喀斯",
+          "title": "出血速杀流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "eddec607332b",
+      "query": "死之鸟怎么逃课",
+      "group": "逃课意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "死之鸟",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "死之鸟",
+          "title": "圣属性压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "死亡仪式鸟",
+          "title": "悬崖石台蹲死流"
+        },
+        {
+          "layer": "l2",
+          "target": "祖灵",
+          "title": "找本体逐个击破流"
+        },
+        {
+          "layer": "l2",
+          "target": "老将尼奥",
+          "title": "隐身先清召唤流"
+        },
+        {
+          "layer": "l2",
+          "target": "玛莲妮亚",
+          "title": "冻伤壶 + 仿身泪滴无脑流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "fadba97cb73e",
+      "query": "双石像鬼怎么逃课",
+      "group": "口语俗称",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "英雄石像鬼",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "英雄石像鬼",
+          "title": "安眠曲分割流"
+        },
+        {
+          "layer": "l2",
+          "target": "英雄石像鬼",
+          "title": "毒雾磨血流"
+        },
+        {
+          "layer": "l2",
+          "target": "铃珠猎人",
+          "title": "魔像弓箭摔死流"
+        },
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "玛利喀斯",
+          "title": "出血速杀流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "f5612afe150f",
+      "query": "葛瑞克怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "接肢葛瑞克",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "接肢葛瑞克",
+          "title": "绕侧打腿流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“接肢”葛瑞克"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“接肢”贵族后裔"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“接肢”葛瑞克"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“接肢”葛瑞克"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "f6effaade7f3",
+      "query": "飞龙亚基尔怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "飞龙亚基尔",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "飞龙亚基尔",
+          "title": "骑马环绕流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Dragon"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "龙息废墟"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Dragon"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "其中一种龙飨祷告。属于高阶祷告。能展现“"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "275940bbcfc7",
+      "query": "蕾娜菈怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "满月女王蕾娜菈",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "满月女王蕾娜菈",
+          "title": "召唤清场流（一阶段）/ 贴身压制流（二阶段）"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "受黄金树雕琢的“满月女王”蕾娜菈的追忆。"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“满月女王”蕾娜菈"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“满月女王”蕾娜菈"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "参考月亮的模样制成的长型头冠。“满月女王"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "1ec0d96f3d6b",
+      "query": "亵渎君王拉卡德怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "亵渎君王拉卡德",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "亵渎君王拉卡德",
+          "title": "蛇猎长矛流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“亵渎君王”拉卡德"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "受黄金树雕琢的“亵渎君王”拉卡德的追忆。"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“亵渎君王”拉卡德"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“亵渎君王”拉卡德的恐怖力量。能释放受熏"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "f0353c5670d4",
+      "query": "黄金树的化身怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "黄金树的化身",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "黄金树的化身",
+          "title": "绕腿输出流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Erdtree"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "黄金树的化身"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "黄金树的化身"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "祭祀黄金树的光耀古老仪式杖。守护小黄金树"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "28431f4b72b5",
+      "query": "火焰巨人怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "火焰巨人",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "火焰巨人",
+          "title": "断腿锁足流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "火焰巨人"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "火焰巨人"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "火焰巨人"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "直接展现火焰巨人力量的其中一种祷告。能在"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "5ae6792ebd14",
+      "query": "老将尼奥怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "老将尼奥",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "老将尼奥",
+          "title": "先斩随从流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "老将欧尼尔"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "经过长久使用、历经百战的腿甲。索尔的老将"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "经过长久使用、历经百战的头盔。索尔的老将"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "老将尼奥"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "03b1b6e4c870",
+      "query": "黑暗弃子艾丝缇怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "黑暗弃子艾丝缇",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "黑暗弃子艾丝缇",
+          "title": "贴头速攻流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "受黄金树雕琢的“黑暗弃子”艾丝缇的追忆。"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Astel"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Astel"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Astel"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "f723ada4ff96",
+      "query": "神兽舞狮怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "神兽舞狮",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "神兽舞狮",
+          "title": "元素侧移流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Divine Beast Dancing Lion"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Enraged Divine Beast"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Divine Beast Dancing Lion"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Divine Beast Dancing Lion"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "23a065ba50af",
+      "query": "梅瑟莫怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "穿刺者梅瑟莫",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "穿刺者梅瑟莫",
+          "title": "贴身断蛇流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Messmer the Impaler"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Messmer the Impaler"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Messmer the Impaler"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Messmer the Impaler"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "ea7764f760b6",
+      "query": "约定之王拉塔恩怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "约定之王拉塔恩",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "约定之王拉塔恩",
+          "title": "双阶段贴身流"
+        },
+        {
+          "layer": "l3",
+          "target": "拉塔恩",
+          "title": "召唤群殴流（设计本意打法）"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“碎星”拉塔恩"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Promised Consort Radahn"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“碎星”拉塔恩"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "e09ff94b2f50",
+      "query": "初始之王葛孚雷怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "初始之王葛孚雷",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "初始之王葛孚雷",
+          "title": "绕右贴身流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“初始之王”葛孚雷"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "葛孚雷的肖像"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“初始之王”葛孚雷"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“初始之王”葛孚雷"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "81419140846e",
+      "query": "荷莱·露怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "撼地荷莱·露",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "撼地荷莱·露",
+          "title": "跳跃避震流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "食粪者"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "梅琳娜"
+        },
+        {
+          "layer": "l3",
+          "target": "圣树骑士罗蕾塔",
+          "title": "侧滚冲锋流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "战技：罗蕾塔的斩击禁卫骑士罗蕾塔的战技。"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "02a13e341ddb",
+      "query": "弗尔桑克斯怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "死龙弗尔桑克斯",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "死龙弗尔桑克斯",
+          "title": "雷枪窗口流"
+        },
+        {
+          "layer": "l3",
+          "target": "龙王普拉顿桑克斯",
+          "title": "抓后摇速攻流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“死龙”弗尔桑克斯"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Millicent's Sisters"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "黑剑眷属"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "d204c15e5f9b",
+      "query": "恶兆妖鬼玛尔基特怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "恶兆妖鬼玛尔基特",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "恶兆妖鬼玛尔基特",
+          "title": "弹反惩罚流"
+        },
+        {
+          "layer": "l3",
+          "target": "蒙葛特",
+          "title": "近战抓硬直流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "魔法镇瑟利亚的其中一种黑夜魔法。能朝前方"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "将残破毛皮披在裸身上的物品。“恶兆妖鬼”"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "寄宿着灵魂的骨灰。能召唤恶兆猎人罗洛的灵"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "305a4ac9941c",
+      "query": "神皮双人组怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "神皮双人组",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "神皮双人组",
+          "title": "柱廊分割流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "神皮双人组"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "神皮双人组"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "神皮双人组"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "神皮使徒"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "a7766e662af1",
+      "query": "熔炉骑士怎么打",
+      "group": "常规意图",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "熔炉骑士",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "熔炉骑士",
+          "title": "耐心弹反流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "熔炉骑士"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "带有烧熔指痕的铁制铠甲。“圆桌骑士”维克"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "带有烧熔指痕的铁制铠甲。“圆桌骑士”维克"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "带有烧熔指痕的铁制腿甲。“圆桌骑士”维克"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "219d0af2baa4",
+      "query": "葛瑞克怎么打（不逃课）",
+      "group": "否定表达",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "接肢葛瑞克",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "接肢葛瑞克",
+          "title": "绕侧打腿流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“接肢”葛瑞克"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“接肢”贵族后裔"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“接肢”葛瑞克"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“接肢”葛瑞克"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "5e9b4dbf15ba",
+      "query": "拉卡德不用轮椅怎么打",
+      "group": "否定表达",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "亵渎君王拉卡德",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "亵渎君王拉卡德",
+          "title": "蛇猎长矛流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“亵渎君王”拉卡德"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "受黄金树雕琢的“亵渎君王”拉卡德的追忆。"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“亵渎君王”拉卡德"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“碎片君王”葛瑞克的大卢恩。已经失去恩惠"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "6713676abb8e",
+      "query": "神兽舞狮正常打法",
+      "group": "否定表达",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "神兽舞狮",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "神兽舞狮",
+          "title": "元素侧移流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Divine Beast Dancing Lion"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Divine Beast Dancing Lion"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Enraged Divine Beast"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "Divine Beast Dancing Lion"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "6712a4cfa8ce",
+      "query": "有没有什么简单的逃课方法",
+      "group": "无脑度意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "老将尼奥",
+          "title": "隐身先清召唤流"
+        },
+        {
+          "layer": "l2",
+          "target": "铃珠猎人",
+          "title": "魔像弓箭摔死流"
+        },
+        {
+          "layer": "l2",
+          "target": "黑剑眷属",
+          "title": "灵马远程风筝流"
+        },
+        {
+          "layer": "l2",
+          "target": "墓地影子",
+          "title": "范围战技压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "猎犬骑士",
+          "title": "门框卡位流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "eb28b502b85a",
+      "query": "推荐几个轮椅打法",
+      "group": "无脑度意图",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "神皮双人组",
+          "title": "睡眠逐个击破流"
+        },
+        {
+          "layer": "l2",
+          "target": "归树看门犬",
+          "title": "绕后打腿流"
+        },
+        {
+          "layer": "l2",
+          "target": "神皮使徒",
+          "title": "睡眠壶控场流"
+        },
+        {
+          "layer": "l2",
+          "target": "黑剑眷属",
+          "title": "灵马远程风筝流"
+        },
+        {
+          "layer": "l2",
+          "target": "熔岩土龙",
+          "title": "骑马绕后打尾流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "c4b91c751aa0",
+      "query": "我40级能打恶兆猎人吗",
+      "group": "等级过滤",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "恶兆猎人",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "恶兆猎人",
+          "title": "弹反背刺流"
+        },
+        {
+          "layer": "l2",
+          "target": "恶兆妖鬼玛尔基特",
+          "title": "玛尔基特的枷锁压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "恶兆妖鬼玛尔基特",
+          "title": "出血双持压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "英雄石像鬼",
+          "title": "毒雾磨血流"
+        },
+        {
+          "layer": "l2",
+          "target": "拉卡德",
+          "title": "大蛇狩猎枪站桩流（官方逃课武器）"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "f0274d1f2094",
+      "query": "100级逃课打玛莲妮亚",
+      "group": "等级过滤",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "玛莲妮亚",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "玛莲妮亚",
+          "title": "冰霜踏地压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "玛莲妮亚",
+          "title": "冻伤壶 + 仿身泪滴无脑流"
+        },
+        {
+          "layer": "l2",
+          "target": "玛莲妮亚",
+          "title": "双持大剑跳劈锁血"
+        },
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "穿刺者米德拉",
+          "title": "黄金树大盾反弹流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "e34d7da49df2",
+      "query": "恶兆妖鬼玛尔基特在哪个区域",
+      "group": "知识问答",
+      "expect_layers": [
+        "l1"
+      ],
+      "expect_target": "",
+      "retrieved": [
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "死之鸟"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "战灰：圣域"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "绿琥珀链坠＋１"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“碎星”拉塔恩"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "战灰：重力"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "f29e39239bff",
+      "query": "满月女王的追忆能换什么",
+      "group": "知识问答",
+      "expect_layers": [
+        "l1"
+      ],
+      "expect_target": "",
+      "retrieved": [
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "受黄金树雕琢的“满月女王”蕾娜菈的追忆。"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“满月女王”蕾娜菈"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“满月女王”蕾娜菈的魔法权杖。权杖上的辉"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“满月女王”蕾娜菈"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "雕制关于女王传说的护符。能提升智力。观星"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "bc4da223d5ba",
+      "query": "大卢恩有什么用",
+      "group": "知识问答",
+      "expect_layers": [
+        "l1"
+      ],
+      "expect_target": "",
+      "retrieved": [
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "老翁"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "梅琳娜"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "食粪者"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "魔法师瑟濂"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "食粪者"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "02dc7ed127fe",
+      "query": "死之鸟的弱点是什么",
+      "group": "知识问答",
+      "expect_layers": [
+        "l1"
+      ],
+      "expect_target": "",
+      "retrieved": [
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "死亡仪式鸟"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "死亡仪式鸟"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "死之鸟"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "死之鸟"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "在古老活祭品仪式中使用的手斧。将死之鸟以"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "b028dc8190a8",
+      "query": "女武神怎么逃课",
+      "group": "口语俗称",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "玛莲妮亚",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "满月女王蕾娜菈",
+          "title": "贴身压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "老将尼奥",
+          "title": "隐身先清召唤流"
+        },
+        {
+          "layer": "l2",
+          "target": "黑刀刺客",
+          "title": "隐身绕背背刺流"
+        },
+        {
+          "layer": "l2",
+          "target": "拉塔恩",
+          "title": "腐败吐息逃课流"
+        },
+        {
+          "layer": "l2",
+          "target": "玛利喀斯",
+          "title": "出血速杀流"
+        }
+      ],
+      "ranks": {
+        "lenient": 0,
+        "strict": 0
+      },
+      "diag": {
+        "lenient": "target_miss",
+        "strict": "target_miss"
+      }
+    },
+    {
+      "id": "64645b2ad610",
+      "query": "碎星怎么无脑打",
+      "group": "口语俗称",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "拉塔恩",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "祖灵",
+          "title": "找本体逐个击破流"
+        },
+        {
+          "layer": "l2",
+          "target": "熔炉骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "拉塔恩",
+          "title": "全员 NPC + 腐败磨血流"
+        },
+        {
+          "layer": "l2",
+          "target": "死之鸟",
+          "title": "圣属性压制流"
+        }
+      ],
+      "ranks": {
+        "lenient": 4,
+        "strict": 4
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "82920a6e9b16",
+      "query": "碎星将军怎么打",
+      "group": "口语俗称",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "拉塔恩",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "拉塔恩",
+          "title": "召唤群殴流（设计本意打法）"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "专用战技：星云对弃子的星星们灌入魔力，使"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "专用战技：星云对弃子的薄翼灌入魔力，在前"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "帽檐底下绘有星星运行轨迹的大帽子。侍奉卡"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "具有三颗巨大带刺球体的大锤。带刺的球体能"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "952a05bfc75d",
+      "query": "接肢怎么正常打",
+      "group": "口语俗称",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "接肢葛瑞克",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "接肢葛瑞克",
+          "title": "绕侧打腿流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“接肢”贵族后裔"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“接肢”葛瑞克"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "成为接肢祭品的蛹群持有的遗物，用天鹅绒的"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "在箭头涂上血药膏的兽骨弩箭。具有引发异常"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "9a3777ec65a3",
+      "query": "血王怎么逃课",
+      "group": "口语俗称",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "蒙格",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "葛瑞克",
+          "title": "腐败吐息消耗流"
+        },
+        {
+          "layer": "l2",
+          "target": "铃珠猎人",
+          "title": "魔像弓箭摔死流"
+        },
+        {
+          "layer": "l2",
+          "target": "铁处女传送（跳关，非战斗）",
+          "title": "宝箱铁处女直达深根底层"
+        },
+        {
+          "layer": "l2",
+          "target": "老将尼奥",
+          "title": "隐身先清召唤流"
+        },
+        {
+          "layer": "l2",
+          "target": "拉塔恩",
+          "title": "腐败吐息逃课流"
+        }
+      ],
+      "ranks": {
+        "lenient": 0,
+        "strict": 0
+      },
+      "diag": {
+        "lenient": "target_miss",
+        "strict": "target_miss"
+      }
+    },
+    {
+      "id": "65cdba86fa46",
+      "query": "满月女王怎么打",
+      "group": "口语俗称",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "满月女王蕾娜菈",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "满月女王蕾娜菈",
+          "title": "召唤清场流（一阶段）/ 贴身压制流（二阶段）"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "受黄金树雕琢的“满月女王”蕾娜菈的追忆。"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“满月女王”蕾娜菈"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "使用仪式壶制作的其中一项道具。表面刻上卡"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“满月女王”蕾娜菈的魔法权杖。权杖上的辉"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "3a6e7a9fe992",
+      "query": "黑剑怎么正常打",
+      "group": "口语俗称",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "玛利喀斯",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "玛利喀斯",
+          "title": "贴身压制流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "黑剑眷属"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "与“米凯拉的锋刃”玛莲妮亚并肩作战的尊腐"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "与“米凯拉的锋刃”玛莲妮亚并肩作战的尊腐"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "与“米凯拉的锋刃”玛莲妮亚并肩作战的尊腐"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "14982f4997d9",
+      "query": "米凯拉的锋刃怎么逃课",
+      "group": "口语俗称",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "玛莲妮亚",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "玛莲妮亚",
+          "title": "轻装单挑流（翻滚抓后摇）"
+        },
+        {
+          "layer": "l2",
+          "target": "玛利喀斯",
+          "title": "出血速杀流"
+        },
+        {
+          "layer": "l2",
+          "target": "拉塔恩",
+          "title": "腐败吐息逃课流"
+        },
+        {
+          "layer": "l2",
+          "target": "蒙葛特",
+          "title": "玛尔基特的枷锁压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "满月女王蕾娜菈",
+          "title": "贴身压制流"
+        }
+      ],
+      "ranks": {
+        "lenient": 0,
+        "strict": 0
+      },
+      "diag": {
+        "lenient": "layer_miss",
+        "strict": "layer_miss"
+      }
+    },
+    {
+      "id": "73efca4178d2",
+      "query": "开局那个骑马的长枪骑士怎么逃课",
+      "group": "描述提问",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "大树守卫",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "猎犬骑士",
+          "title": "门框卡位流"
+        },
+        {
+          "layer": "l2",
+          "target": "熔炉骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "熔炉骑士",
+          "title": "弹反处决流"
+        },
+        {
+          "layer": "l2",
+          "target": "龙装大树守卫",
+          "title": "骑马绕后蓄力流"
+        }
+      ],
+      "ranks": {
+        "lenient": 0,
+        "strict": 0
+      },
+      "diag": {
+        "lenient": "target_miss",
+        "strict": "target_miss"
+      }
+    },
+    {
+      "id": "aae417f85b56",
+      "query": "盖利德荒野里那条飞龙怎么逃课",
+      "group": "描述提问",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "飞龙桂雷尔",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "飞龙桂雷尔",
+          "title": "大树诱摔流"
+        },
+        {
+          "layer": "l2",
+          "target": "黑剑眷属",
+          "title": "灵马远程风筝流"
+        },
+        {
+          "layer": "l2",
+          "target": "孤牢骑士",
+          "title": "狩猎巨人无限挑飞流"
+        },
+        {
+          "layer": "l2",
+          "target": "满月女王蕾娜菈",
+          "title": "贴身压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "死亡仪式鸟",
+          "title": "悬崖石台蹲死流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "e20043100670",
+      "query": "地下墓地那个会隐身的结晶人怎么逃课",
+      "group": "描述提问",
+      "expect_layers": [
+        "l2"
+      ],
+      "expect_target": "结晶人",
+      "retrieved": [
+        {
+          "layer": "l2",
+          "target": "结晶人",
+          "title": "打击武器破防流"
+        },
+        {
+          "layer": "l2",
+          "target": "墓地影子",
+          "title": "范围战技压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "铁处女传送（跳关，非战斗）",
+          "title": "宝箱铁处女直达深根底层"
+        },
+        {
+          "layer": "l2",
+          "target": "恶兆妖鬼玛尔基特",
+          "title": "玛尔基特的枷锁压制流"
+        },
+        {
+          "layer": "l2",
+          "target": "满月女王蕾娜菈",
+          "title": "贴身压制流"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "739beacd225c",
+      "query": "魔法学院最后那个boss怎么正常打",
+      "group": "描述提问",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "满月女王蕾娜菈",
+      "retrieved": [
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "专用战技：锡杖魔法将辉石灌入魔力，触发古"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "魔法学院雷亚卢卡利亚的其中一种辉石魔法。"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "起源魔法师的其中一人，卢瑟特的魔法。“传"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“起源魔法师”的其中一人，卢瑟特的辉石杖"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "“起源魔法师”的其中一人，亚兹勒的辉石杖"
+        }
+      ],
+      "ranks": {
+        "lenient": 0,
+        "strict": 0
+      },
+      "diag": {
+        "lenient": "layer_miss",
+        "strict": "layer_miss"
+      }
+    },
+    {
+      "id": "e678b493db52",
+      "query": "雪山上那个扔火球的巨人怎么正常打",
+      "group": "描述提问",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "火焰巨人",
+      "retrieved": [
+        {
+          "layer": "l3",
+          "target": "火焰巨人",
+          "title": "断腿锁足流"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "白金魔法师塔"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "守墓斗士"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "火焰巨人"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "战灰：白影诱惑"
+        }
+      ],
+      "ranks": {
+        "lenient": 1,
+        "strict": 1
+      },
+      "diag": {
+        "lenient": "hit",
+        "strict": "hit"
+      }
+    },
+    {
+      "id": "a745b87f08ac",
+      "query": "罗德尔王城里那个长角的国王怎么正常打",
+      "group": "描述提问",
+      "expect_layers": [
+        "l3"
+      ],
+      "expect_target": "蒙葛特",
+      "retrieved": [
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "参考古王的形象制成的护符。据说古王坐镇时"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "火龙徽护符＋１"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "王城罗德尔的地图碎片。王城罗德尔是黄金树"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "王城罗德尔"
+        },
+        {
+          "layer": "l1",
+          "target": "",
+          "title": "王城罗德尔"
+        }
+      ],
+      "ranks": {
+        "lenient": 0,
+        "strict": 0
+      },
+      "diag": {
+        "lenient": "layer_miss",
+        "strict": "layer_miss"
+      }
+    }
+  ]
+}
