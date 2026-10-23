@@ -1,0 +1,20 @@
+{
+  "_about": "演示评估集。10 条题，刻意混了显式指名、俗称、纯描述三种问法——难度画像会把它拆开。",
+  "_rule": {
+    "expect_layer": "期望命中的层：guide 操作指南 / faq 常见问题 / ref 接口参考",
+    "expect_target": "期望命中的文档标题；空串表示只判层",
+    "group": "人工分组"
+  },
+  "cases": [
+    {"query": "离线部署怎么做", "expect_layer": "guide", "expect_target": "离线部署", "group": "显式指名"},
+    {"query": "没网怎么装", "expect_layer": "guide", "expect_target": "离线部署", "group": "口语描述"},
+    {"query": "许可证到期了换哪个文件", "expect_layer": "guide", "expect_target": "许可证更换", "group": "显式指名"},
+    {"query": "授权过期怎么续", "expect_layer": "guide", "expect_target": "许可证更换", "group": "口语描述"},
+    {"query": "数据怎么导出去", "expect_layer": "guide", "expect_target": "数据导出", "group": "口语描述"},
+    {"query": "能连 MySQL 吗", "expect_layer": "faq", "expect_target": "支持哪些数据库", "group": "口语描述"},
+    {"query": "免费版有时间限制吗", "expect_layer": "faq", "expect_target": "试用期多久", "group": "口语描述"},
+    {"query": "每秒最多调多少次", "expect_layer": "ref", "expect_target": "配额限制", "group": "口语描述"},
+    {"query": "接口怎么鉴权", "expect_layer": "ref", "expect_target": "鉴权方式", "group": "显式指名"},
+    {"query": "从旧版本升上来要改什么", "expect_layer": "guide", "expect_target": "升级迁移", "group": "口语描述"}
+  ]
+}

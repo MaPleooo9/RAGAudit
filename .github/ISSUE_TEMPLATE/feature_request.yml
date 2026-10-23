@@ -1,0 +1,52 @@
+name: 功能建议
+description: 新的判定规则、适配器、指标、或报告改进
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提之前请先看一眼 [ROADMAP.md](../blob/main/ROADMAP.md)。
+        里面对**不做的事**写得很明确（LLM 打分、向量库封装、Web UI），
+        这几类不再讨论，避免双方浪费时间。
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 类型
+      options:
+        - 新的判定规则
+        - 结果适配器（接某个框架的输出格式）
+        - 新指标
+        - 报告可读性
+        - 性能
+        - 文档
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 你被什么卡住了
+      description: |
+        先讲场景，再讲方案。有价值的往往是「问题描述」，
+        而「解决方案」通常由维护者按项目一贯的取舍来定。
+      placeholder: |
+        我们的实体名带单位后缀（「100QPS」vs「100 qps」），
+        现在的 exact 规则判不中，导致指标系统性偏低约 8%。
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 你设想的做法（可选）
+      description: 有想法就写，没有也没关系。
+
+  - type: textarea
+    id: alternative
+    attributes:
+      label: 你试过的替代方案
+      description: 为什么现有功能解决不了？这条能省掉很多来回。
+    validations:
+      required: true

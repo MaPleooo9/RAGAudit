@@ -1,0 +1,70 @@
+name: 报告问题
+description: 判定结果不对、指标算错、报告异常
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        判断类问题（该命中的没命中、不该命中的命中了）**必须**提供下面三项，
+        否则无法复现。缺项的 Issue 会被要求补充，这比猜着修更快。
+
+  - type: textarea
+    id: what
+    attributes:
+      label: 发生了什么
+      description: 一句话说清现象，不要只写「结果不对」。
+      placeholder: 期望目标带括号后缀时，strict 口径判为未命中，但页面主实体其实一致。
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: 复现步骤
+      description: 能贴命令或最小脚本最好。
+      placeholder: |
+        ragaudit run -s suite.json -r mypkg.retr:search -o report.md
+        # 或直接贴几行 Python
+    validations:
+      required: true
+
+  - type: textarea
+    id: case
+    attributes:
+      label: 涉事的那一条（判断类问题必填）
+      description: 评估集里的原始条目、检索器实际返回的前 3 条、你期望的判定结果。
+      render: json
+      placeholder: |
+        // 评估集条目
+        {"query": "玛莲妮亚怎么逃课", "expect_layer": "l2", "expect_target": "玛莲妮亚"}
+
+        // 实际返回前 3 条
+        [{"layer": "l2", "target": "玛莲妮亚"}, ...]
+
+        // 期望命中 / 实际判定
+        期望：命中；实际：未命中
+
+  - type: input
+    id: version
+    attributes:
+      label: RAGAudit 版本
+      placeholder: 0.1.0
+    validations:
+      required: true
+
+  - type: input
+    id: python
+    attributes:
+      label: Python 版本与操作系统
+      placeholder: 3.12.4 / Windows 11
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: 其他
+      description: 报错栈、截图、你的判断（如果已经猜到原因）。
+    validations:
+      required: false

@@ -1,0 +1,60 @@
+{
+  "_about": "演示语料。一个虚构产品的文档库，用来让任何人 3 分钟内看到工具在跑。故意不用游戏领域——工具本身与领域无关。",
+  "docs": [
+    {
+      "id": "d01",
+      "layer": "guide",
+      "title": "离线部署完整步骤",
+      "text": "无外网环境安装：先在联网机器下载离线包，拷贝到目标机执行 install.sh，全程不需要访问外网。防火墙需放行 8443。"
+    },
+    {
+      "id": "d02",
+      "layer": "guide",
+      "target": "许可证更换",
+      "title": "许可证更换",
+      "text": "授权文件位于 conf/license.key。到期或扩容后，用新文件覆盖该路径并重启服务即可，无需重新安装。"
+    },
+    {
+      "id": "d03",
+      "layer": "guide",
+      "target": "数据导出",
+      "title": "数据导出",
+      "text": "支持导出为 CSV 与 Parquet。执行 export --format csv --since 2026-01-01，导出任务异步执行，结果在 exports 目录。"
+    },
+    {
+      "id": "d04",
+      "layer": "faq",
+      "target": "试用期多久",
+      "title": "试用期多久",
+      "text": "免费试用 30 天，到期后转为只读模式，数据保留 90 天。企业版可通过工单申请延长一次。"
+    },
+    {
+      "id": "d05",
+      "layer": "faq",
+      "target": "支持哪些数据库",
+      "title": "支持哪些数据库",
+      "text": "内置支持 PostgreSQL、MySQL 与达梦。Oracle 需要额外安装 connect 驱动包。"
+    },
+    {
+      "id": "d06",
+      "layer": "ref",
+      "target": "配额限制",
+      "title": "配额限制",
+      "text": "默认限流 100 QPS，单次请求体上限 2MB，单账号并发 20。超限返回 429 并带 Retry-After 头。"
+    },
+    {
+      "id": "d07",
+      "layer": "ref",
+      "target": "鉴权方式",
+      "title": "鉴权方式",
+      "text": "使用 Bearer Token，放在 Authorization 头里。Token 有效期 2 小时，刷新接口为 POST /auth/refresh。"
+    },
+    {
+      "id": "d08",
+      "layer": "guide",
+      "target": "升级迁移",
+      "title": "升级迁移",
+      "text": "跨大版本升级需先执行 migrate --check 校验，再 migrate --apply。7.x 到 8.x 需要手工重建索引。"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: 测试 (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: 单元测试
+        run: python -m unittest discover -s tests -p "test_*.py" -v
+
+      # README 里承诺「clone 下来 3 秒能跑」，这条 CI 就是那句承诺的守卫。
+      # 演示跑不通意味着新人的第一印象是失败的，优先级等同于测试失败。
+      - name: 演示端到端可运行
+        run: python examples/toy/run_demo.py
+
+      - name: 评估集自检
+        run: python -m ragaudit lint -s examples/toy/suite.json
+
+      - name: 构建可安装包
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install build
+          python -m build
+
+  demo-artifact:
+    name: 演示报告
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 生成报告
+        run: python examples/toy/run_demo.py
+      - name: 上传报告
+        uses: actions/upload-artifact@v4
+        with:
+          name: demo-reports
+          path: examples/toy/out/*.md
+          if-no-files-found: error

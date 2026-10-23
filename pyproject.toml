@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ragaudit"
+version = "0.1.0"
+description = "检索评测审计台：不给你的 RAG 又一个分数，而是审计这个分数能不能信"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "RAGAudit contributors" }]
+keywords = ["rag", "retrieval", "evaluation", "regression-testing", "llm", "audit"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Natural Language :: Chinese (Simplified)",
+]
+# 刻意保持零运行时依赖：评估工具本身要是黑盒，它的结论就没法用来判断别人。
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+ragaudit = "ragaudit.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/MaPleooo9/RAGAudit"
+Issues = "https://github.com/MaPleooo9/RAGAudit/issues"
+
+[tool.setuptools]
+packages = ["ragaudit"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
