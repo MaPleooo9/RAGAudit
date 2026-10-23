@@ -23,3 +23,6 @@ examples/toy/out/
 # 本地评估结果（体积大且含业务数据，不入库）
 *.local.json
 runs/
+
+# 本地工作记录（Agent 记忆与笔记，不随仓库分发）
+.workbuddy/
