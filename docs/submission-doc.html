@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>RAGAudit 作品介绍文档</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm 16mm 16mm; }
+  @media screen {
+    body { width: 210mm; margin: 0 auto; padding: 18mm 16mm; background: #fff; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
+    font-size: 10.6pt; line-height: 1.75; color: #1a1a1a; margin: 0;
+  }
+  h1 { font-size: 20pt; margin: 0 0 6px; letter-spacing: .5px; }
+  h2 {
+    font-size: 14pt; margin: 26px 0 10px; padding-left: 10px;
+    border-left: 4px solid #1f4e79; color: #14304d;
+  }
+  h3 { font-size: 11.6pt; margin: 18px 0 6px; color: #1f4e79; }
+  p { margin: 7px 0; text-align: justify; }
+  ul, ol { margin: 6px 0 10px; padding-left: 22px; }
+  li { margin: 4px 0; }
+  table {
+    width: 100%; border-collapse: collapse; margin: 10px 0 14px;
+    font-size: 9.6pt; page-break-inside: avoid;
+  }
+  th, td { border: 1px solid #d5dbe2; padding: 6px 8px; vertical-align: top; text-align: left; }
+  th { background: #eef3f7; font-weight: 600; color: #14304d; }
+  td.num { text-align: center; white-space: nowrap; }
+  code {
+    font-family: Consolas, "Courier New", monospace; font-size: 9.4pt;
+    background: #f2f4f6; padding: 1px 4px; border-radius: 3px;
+  }
+  pre {
+    background: #f6f8fa; border: 1px solid #e1e6eb; border-radius: 4px;
+    padding: 10px 12px; font-size: 9.2pt; line-height: 1.6; overflow: hidden;
+    font-family: Consolas, "Courier New", monospace; page-break-inside: avoid;
+  }
+  .lead { font-size: 11pt; color: #33475b; }
+  .muted { color: #5b6b7b; font-size: 9.6pt; }
+  .tag {
+    display: inline-block; font-size: 9pt; padding: 2px 8px; margin-right: 6px;
+    border: 1px solid #b9c9d8; border-radius: 10px; color: #1f4e79; background: #f4f8fb;
+  }
+  .box {
+    border: 1px solid #cfd9e2; background: #f8fafc; border-radius: 4px;
+    padding: 10px 14px; margin: 12px 0; page-break-inside: avoid;
+  }
+  .box.warn { border-color: #e0c9a6; background: #fdf8f0; }
+  .kpi { width: 100%; border-collapse: separate; border-spacing: 8px 0; margin: 12px 0; }
+  .kpi td {
+    border: 1px solid #d5dbe2; border-radius: 5px; text-align: center;
+    padding: 10px 6px; background: #fbfcfd; width: 25%;
+  }
+  .kpi .v { display: block; font-size: 17pt; font-weight: 700; color: #1f4e79; line-height: 1.2; }
+  .kpi .l { display: block; font-size: 8.8pt; color: #5b6b7b; margin-top: 2px; }
+  .page { page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+  .cover { padding-top: 46mm; }
+  .cover .track { font-size: 10.5pt; color: #5b6b7b; letter-spacing: 2px; margin-bottom: 18px; }
+  .cover .title { font-size: 30pt; font-weight: 700; color: #14304d; line-height: 1.3; }
+  .cover .sub { font-size: 13pt; color: #33475b; margin-top: 10px; }
+  .cover .rule { height: 3px; width: 72px; background: #1f4e79; margin: 22px 0; }
+  .cover .meta { font-size: 10pt; color: #33475b; line-height: 2; }
+  .cover .meta b { display: inline-block; width: 88px; color: #5b6b7b; font-weight: 400; }
+  .quote {
+    border-left: 3px solid #b9c9d8; padding: 2px 0 2px 12px; margin: 10px 0;
+    color: #33475b;
+  }
+  .foot { margin-top: 14px; font-size: 8.8pt; color: #7a8896; text-align: center; }
+  .nobreak { page-break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<!-- ============ 封面 ============ -->
+<div class="page cover">
+  <div class="track">第四届开放原子大赛 · 2026 开源行业解决方案创新赛</div>
+  <div class="track">赛道一 · 开源基础软件与解决方案</div>
+
+  <div class="title">RAGAudit<br>检索评测审计工具</div>
+  <div class="sub">不给你的 RAG 又一个分数，而是审计这个分数能不能信</div>
+  <div class="rule"></div>
+
+  <div class="meta">
+    <div><b>项目名称</b>RAGAudit：RAG 检索评测审计工具</div>
+    <div><b>申报主体</b>学生团队</div>
+    <div><b>开源协议</b>Apache-2.0</div>
+    <div><b>代码仓库</b>https://github.com/MaPleooo9/RAGAudit</div>
+    <div><b>镜像仓库</b>https://gitee.com/iKnowuHateme/RAGAudit</div>
+    <div><b>文档版本</b>参赛提交版 · 2026 年 10 月</div>
+  </div>
+
+  <div style="margin-top:56mm; font-size:9.2pt; color:#7a8896;">
+    本文件为参赛作品介绍文档，所有数据均来自仓库内可复现产物。
+  </div>
+</div>
+
+<!-- ============ 一 ============ -->
+<div class="page">
+<h2>一、项目背景与问题定义</h2>
+
+<h3>1.1 一个数字不构成证据</h3>
+<p>检索增强生成（RAG）是目前大模型落地最主流的工程形态之一，而检索质量是它的命门：
+召回的文档不对，后面无论换多强的生成模型都救不回来。因此几乎每个 RAG 项目都会对外报一个检索指标，
+例如「命中率 94.1%」。</p>
+
+<p>但这行数字本身不构成任何证据。同一个 94.1%，可能来自扎实的语义检索，
+也可能来自四种系统性虚高——而它们<b>全部发生在算分环节，不在回答环节</b>，
+因此现有的答案质量评测框架看不见：</p>
+
+<table>
+  <thead>
+    <tr><th style="width:19%">虚高来源</th><th style="width:44%">具体表现</th><th>现有工具能否发现</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>判定口径过松</td><td>标题里包含期望实体名就算命中，实际指向的是另一个页面</td><td>否。只报一个口径，无从对照</td></tr>
+    <tr><td>题库信息泄漏</td><td>问句里直接写着答案实体名，实体匹配即可命中</td><td>否。默认题库是可信的</td></tr>
+    <tr><td>规则抢功</td><td>分数其实来自别名表、实体硬置顶等规则，而非语义检索</td><td>否。需人工注释代码再跑一遍</td></tr>
+    <tr><td>删题涨分</td><td>悄悄移除难例，平均分自然上升</td><td>否。只比较总分，不比对题目集合</td></tr>
+  </tbody>
+</table>
+
+<p>这四类问题有一个共同点：<b>它们都是「评测方法」的缺陷，而不是「系统能力」的缺陷。</b>
+用答案质量评测去查检索分数是否可信，方向就是错的。</p>
+
+<h3>1.2 项目定位</h3>
+<div class="quote">
+RAGAudit 不产出「又一个分数」，它回答的是：这个分数怎么来的、虚高了多少、
+是哪个部件挣来的、下一次改动弄坏了哪几条。
+</div>
+
+<p>换句话说，它把「评测」本身当成被审计对象。与主流框架是<b>分层关系而非替代关系</b>：</p>
+
+<table>
+  <thead>
+    <tr><th style="width:22%"></th><th style="width:26%">RAGAudit</th><th style="width:26%">RAGAS</th><th>DeepEval</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>量什么</td><td><b>分数本身是否可信</b></td><td>答案是否有据、是否切题</td><td>整条链路与 Agent 行为</td></tr>
+    <tr><td>判定方式</td><td>确定性硬指标，<b>不调 LLM</b></td><td>LLM-as-judge</td><td>LLM-as-judge（含 G-Eval）</td></tr>
+    <tr><td>可复现性</td><td>相同输入 → 完全相同输出</td><td>换 judge 就换一把尺子</td><td>同左</td></tr>
+    <tr><td>运行时依赖</td><td><b>零</b>（纯标准库）</td><td>ragas 及数据集生态</td><td>deepeval</td></tr>
+  </tbody>
+</table>
+
+<p class="muted">推荐分工：RAGAudit 守「检索不退化」（秒级、可进 CI），RAGAS / DeepEval 守「答案不退化」。</p>
+
+<h3>1.3 目标用户</h3>
+<ul>
+  <li><b>RAG 应用开发者</b>：需要在上线前知道自己的指标有没有水分，在迭代中知道哪一条退化。</li>
+  <li><b>评测集维护者</b>：需要检查题库是否存在实体泄漏、难例是否被悄悄删掉。</li>
+  <li><b>技术评审与验收方</b>：需要在不复跑整套系统的前提下判断对方报的分数可不可信。</li>
+</ul>
+</div>
+
+<!-- ============ 二 ============ -->
+<div class="page">
+<h2>二、核心能力（对应评审维度「技术创新」）</h2>
+
+<h3>2.1 双口径：把「虚高」变成一个可计算的差值</h3>
+<p>同一份检索结果，按两套规则各算一遍：</p>
+<ul>
+  <li><code>lenient</code>：结果带 <code>target</code> 字段就比 target；没有则看标题是否<b>包含</b>期望名。</li>
+  <li><code>strict</code>：优先比 target；没有则要求页面主实体<b>完全相等</b>。</li>
+</ul>
+<p>两个数字的差值就是虚高量。报告永远并列呈现，不挑好看的那个报。
+差 10 个百分点不是误差，而是有 10% 的命中共依赖宽松匹配。</p>
+
+<div class="box">
+<b>一个真实的设计教训。</b>早期版本按层名分派口径（给 <code>l1</code> 配包含匹配）。
+当使用者换了一套层命名（<code>guide</code> / <code>faq</code> / <code>ref</code>），
+lenient 会<b>静默退化成 strict</b>——指标数字还在，含义已经全变了，而人眼看不出来。
+现版本把分派依据改到「结果自身有没有 <code>target</code>」这一客观字段上，与层命名彻底解耦。
+</div>
+
+<h3>2.2 消融与归因：这个分数是谁挣的</h3>
+<p>把某个部件关掉再跑一遍，<code>ΔHit@1</code> 就是它的净贡献。关键在于：<b>关掉之后反而变好的部件会被单独标出</b>。
+负收益模块不该以「还没证明有害」为理由留在链路上——这正是真实案例中发现的第一个可删模块。</p>
+<pre>VARIANTS = [
+    ("full（含别名）",      search_v1, "线上方案"),
+    ("full −alias（关俗称）", search_v2, "验证别名表的净贡献"),
+]</pre>
+<pre>ragaudit ablate -s suite.json -v variants.py --layers l2,l3</pre>
+
+<h3>2.3 难度画像：拆穿「自己出题自己考」</h3>
+<p>不需要人工分组，直接从题面判定每道题的信息泄漏等级，共四档：</p>
+<table>
+  <thead><tr><th style="width:14%">等级</th><th style="width:43%">含义</th><th>意味着什么</th></tr></thead>
+  <tbody>
+    <tr><td><code>explicit</code></td><td>问句直接写着答案实体名</td><td>实体匹配就能命中，测不出检索能力</td></tr>
+    <tr><td><code>alias</code></td><td>问句用的是已登记的俗称</td><td>测的是别名表覆盖度，不是语义</td></tr>
+    <tr><td><code>partial</code></td><td>问句含同名子串，易指向错误实体</td><td>比完全不含实体名更难，也更容易判错期望值</td></tr>
+    <tr><td><code>implicit</code></td><td>整句不含任何实体名</td><td><b>只有这一档才真正考验语义检索</b></td></tr>
+  </tbody>
+</table>
+<p>显式指名占比超过 70% 时，<code>lint</code> 会直接给出警告：这个总分大概率是查词典查出来的。
+这把「题库质量」从主观判断变成了一个可核对的数字。</p>
+
+<h3>2.4 逐条回归：坏在哪一环</h3>
+<p>两次运行按<b>题目内容哈希</b>对齐（不是按序号，中间插入一条不会让后面全部错位），输出六类变化：</p>
+<table>
+  <thead><tr><th style="width:16%">类型</th><th>含义</th><th style="width:38%">为什么审计需要它</th></tr></thead>
+  <tbody>
+    <tr><td><code>fixed</code></td><td>原本未命中，现在命中</td><td>证明改动有效</td></tr>
+    <tr><td><code>broke</code></td><td>原本命中，现在未命中</td><td>总分可能仍在涨，但已经坏了东西</td></tr>
+    <tr><td><code>improved</code></td><td>排名前移但均命中</td><td>提前预警：下一条可能就掉出 Top-K</td></tr>
+    <tr><td><code>worsened</code></td><td>排名后退但均命中</td><td>同上，且真实案例中确有一条从 1 掉到 4</td></tr>
+    <tr><td><code>added</code></td><td>新增题目</td><td>题库扩张需单独可见</td></tr>
+    <tr><td><code>removed</code></td><td>题目被移除</td><td><b>删掉难例同样能让总分上涨</b>，必须单独报出</td></tr>
+  </tbody>
+</table>
+<p>每条退化还会附带归因：是层路由错了，还是排序掉了。这让「分数掉了 0.3」从一句抱怨变成待办清单。</p>
+</div>
+
+<!-- ============ 三 ============ -->
+<div class="page">
+<h2>三、技术架构与工程取舍</h2>
+
+<h3>3.1 数据流</h3>
+<pre>suite.json ──► schema 归一化 ──► retriever f(query, k) ──► matchers 实体/别名匹配
+                     │                                              │
+                     └──────────────► metrics 双口径计算 ◄──────────┘
+                                              │
+              ┌───────────────┬───────────────┼────────────────┐
+              ▼               ▼               ▼                ▼
+          report.md       ablate.md        diff.md          run.json
+        （跑分报告）    （消融矩阵）    （逐条回归）    （原始结果，diff 的输入）</pre>
+
+<p>关键设计：<b>被测系统以纯函数形式接入</b>，只需满足 <code>f(query, k) -&gt; list[结果]</code>，
+结果中带 <code>layer</code> / <code>target</code> / <code>title</code>。
+支持 dict、dataclass 及任何带同名属性的对象自动归一化；字段名不一致时用
+<code>Doc.from_any(obj, field_map=...)</code> 指定映射。</p>
+
+<h3>3.2 模块划分</h3>
+<table>
+  <thead><tr><th style="width:20%">模块</th><th>职责</th></tr></thead>
+  <tbody>
+    <tr><td><code>schema</code></td><td>评估集与检索结果的数据结构、类型归一化、字段映射</td></tr>
+    <tr><td><code>matchers</code></td><td>实体名匹配、别名展开、子串冲突判定（partial 识别）</td></tr>
+    <tr><td><code>metrics</code></td><td>双口径 Hit@K / MRR / 层准确率计算</td></tr>
+    <tr><td><code>ablate</code></td><td>多变体批量运行、Δ 计算、负收益告警</td></tr>
+    <tr><td><code>diff</code></td><td>内容哈希对齐、六类变化分类、单条归因</td></tr>
+    <tr><td><code>report</code></td><td>Markdown 报告渲染（并列呈现，不做取舍）</td></tr>
+    <tr><td><code>lint</code></td><td>评估集自检与泄漏画像统计</td></tr>
+    <tr><td><code>cli</code></td><td>四个子命令的入口与参数校验</td></tr>
+  </tbody>
+</table>
+
+<h3>3.3 三条工程原则</h3>
+
+<p><b>一、不调 LLM 打分。</b>检索层的问题在「召回哪一条」，不在「话说得好不好」。
+用 LLM 当裁判会把两个问题混在一起，而且本地小模型打分不可靠、每次运行结果还不一样。
+本项目只用可判定的硬指标：期望层 + 期望目标，命中即算对。这让结果<b>完全可复现</b>，
+也让它有资格去质疑别人的分数——一个自己就不稳定的工具，没有立场做审计。</p>
+
+<p><b>二、零运行时依赖。</b>评估工具本身要是黑盒，它的结论就没法用来判断别人。
+纯标准库意味着任何人拿到代码都能逐行核对打分逻辑，也意味着它能在任何 CI 环境里跑起来，
+不引入供应链风险。重依赖（向量库、embedding 模型）只出现在<b>被测系统一侧的适配器</b>里。</p>
+
+<p><b>三、保留逐条结果。</b>只留总分的评测撑不起回归测试。总分掉 0.3 时，
+你需要知道是哪几条、坏在哪一环。因此 <code>run --json</code> 保存的原始结果是
+<code>diff</code> 的直接输入，两者构成一个闭环。</p>
+</div>
+
+<!-- ============ 四 ============ -->
+<div class="page">
+<h2>四、真实场景验证（对应评审维度「场景落地」）</h2>
+
+<h3>4.1 被测对象</h3>
+<p>对一个<b>已上线</b>的本地离线 RAG 系统 <b>NaviRAG v1.0.1</b> 做了完整审计。
+该系统为游戏攻略问答场景，采用三层知识库（L1 资料 / L2 逃课 / L3 常规）+ 规则路由 +
+实体硬置顶 + 别名表 + 术语增强，自报 Hit@1 94.1%。</p>
+
+<table>
+  <thead><tr><th style="width:26%">项目</th><th>说明</th></tr></thead>
+  <tbody>
+    <tr><td>知识库规模</td><td>8,428 条（ChromaDB 持久化向量库）</td></tr>
+    <tr><td>评估集</td><td>85 条人工编写题，8 个意图分组</td></tr>
+    <tr><td>数据一致性</td><td>与被测系统仓库内原文件 <b>SHA-256 完全一致</b>，未改题、未删题、未挑题</td></tr>
+    <tr><td>运行耗时</td><td>首次加载模型约 60 秒；85 条题跑完约 16 秒</td></tr>
+  </tbody>
+</table>
+
+<h3>4.2 审计结果</h3>
+<table class="kpi">
+  <tr>
+    <td><span class="v">94.1%</span><span class="l">lenient Hit@1</span></td>
+    <td><span class="v">92.9%</span><span class="l">strict Hit@1</span></td>
+    <td><span class="v">96.5%</span><span class="l">Hit@5</span></td>
+    <td><span class="v">0.951</span><span class="l">MRR</span></td>
+  </tr>
+</table>
+
+<p>五个问题，五个答案：</p>
+<table>
+  <thead><tr><th style="width:34%">审计问题</th><th>结论</th></tr></thead>
+  <tbody>
+    <tr><td>94.1% 是不是口径撑大的？</td><td><b>不是。</b>两套口径差 1.2pp，且这 1.2pp 来自<b>本工具严格口径的误判</b>（一条题命中了物品页）。真实虚高为 0</td></tr>
+    <tr><td>这个分数是谁挣的？</td><td><b>76.5pp 来自实体名硬匹配</b>：关掉实体置顶后整条链路只剩 17.6%；单路纯向量仅 12.9%</td></tr>
+    <tr><td>真实泛化水平如何？</td><td>「描述提问」组（整句不含实体名）6 条只中 3 条，<b>Hit@1 为 50%</b>，3 条完全未命中全部落在该组</td></tr>
+    <tr><td>哪个模块白占位置？</td><td>术语增强 <b>ΔHit@1 = ±0</b>，MRR 仅差 0.004，在当前题集上无法证明价值</td></tr>
+    <tr><td>哪个部件最脆？</td><td>手工别名表值 3.5pp，关掉立刻坏 3 条，全部是俗称题；另有一条 rank 2→1、一条 rank 1→4</td></tr>
+  </tbody>
+</table>
+
+<h3>4.3 消融矩阵</h3>
+<table>
+  <thead><tr><th style="width:34%">变体</th><th class="num">Hit@1</th><th class="num">Δ</th><th>说明</th></tr></thead>
+  <tbody>
+    <tr><td>full（线上完整链路）</td><td class="num">94.1%</td><td class="num">—</td><td>基准</td></tr>
+    <tr><td>− alias（关俗称表）</td><td class="num">90.6%</td><td class="num">−3.5pp</td><td>3 条俗称题失效</td></tr>
+    <tr><td>− enhance（关术语增强）</td><td class="num">94.1%</td><td class="num">±0.0pp</td><td>MRR 0.951 → 0.947，无实际收益</td></tr>
+    <tr><td>− entity（关实体硬置顶）</td><td class="num">17.6%</td><td class="num">−76.5pp</td><td><b>分数的主要来源</b></td></tr>
+    <tr><td>pure-vector（单路纯向量）</td><td class="num">12.9%</td><td class="num">−81.2pp</td><td>语义检索的真实水位</td></tr>
+  </tbody>
+</table>
+
+<h3>4.4 口径等价的证据</h3>
+<p>工具独立算出的五个数字，与被测系统自评报告<b>逐位吻合</b>：
+<code>12.9 / 17.6 / 90.6 / 94.1 / MRR 0.951</code>。
+这说明审计口径与主流做法等价，<b>审计本身没有引入偏差</b>——
+差异全部来自本工具额外提供的信息，而不是算法分歧。这是审慎审计的前提。</p>
+
+<div class="box warn">
+<b>复现边界（如实说明）。</b>本案例依赖被测系统本地的 ChromaDB 向量库与 embedding 模型，
+外部无法直接复现跑分过程。仓库内已提供适配器源码与全部产物（原始 JSON、三份报告）供核对；
+<b>可一键复现的是 toy 演示</b>（10 条题，零安装，3 秒内跑完）。
+我们选择把这个边界写清楚，而不是把它藏起来。
+</div>
+</div>
+
+<!-- ============ 五 ============ -->
+<div class="page">
+<h2>五、与同类方案的差异化</h2>
+
+<p>必须正面回答一个问题：这不是「把现成工具拼起来」吗？不是。三者解决的是三个不同层次的问题：</p>
+
+<table>
+  <thead>
+    <tr><th style="width:22%">维度</th><th style="width:26%">RAGAudit</th><th style="width:26%">RAGAS</th><th>DeepEval</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>判定机制</td><td>确定性硬指标</td><td>LLM 裁判</td><td>LLM 裁判（G-Eval）</td></tr>
+    <tr><td>输入</td><td>检索结果 + 评估集</td><td>问题 / 答案 / 上下文</td><td>整条链路轨迹</td></tr>
+    <tr><td>输出</td><td>可信度诊断 + 归因 + 退化清单</td><td>质量分数</td><td>质量分数与断言结果</td></tr>
+    <tr><td>双口径量虚高</td><td>✅</td><td>❌</td><td>❌</td></tr>
+    <tr><td>题库泄漏画像</td><td>✅</td><td>❌</td><td>❌</td></tr>
+    <tr><td>删题涨分检测</td><td>✅</td><td>❌</td><td>❌</td></tr>
+    <tr><td>可进 CI 的秒级回归</td><td>✅（零依赖）</td><td>需 API 与网络</td><td>需 API 与网络</td></tr>
+  </tbody>
+</table>
+
+<p>差异不在「指标算得更准」，而在<b>提问的对象不同</b>：
+RAGAS / DeepEval 问「这条答案好不好」，RAGAudit 问「你这个分数是不是真的」。
+后者在前者之上，且不依赖前者。真实案例已经展示了两者的互补关系——
+被测系统答案质量并非本项目评估范围，本项目只回答分数可信度。</p>
+
+<h2>六、应用场景与落地路径</h2>
+
+<table>
+  <thead><tr><th style="width:24%">场景</th><th>具体用法</th></tr></thead>
+  <tbody>
+    <tr><td><b>迭代回归（主场景）</b></td><td>把 <code>run --json</code> 挂进 CI，每次提交自动产出退化清单，回答「这次改动有没有让检索变差」。零依赖意味着不需要额外计费与网络。</td></tr>
+    <tr><td><b>上线前自证</b></td><td>用双口径 + 泄漏画像生成一份「分数可信度说明」，随技术方案一起提交，避免用一个无法追溯的百分比做承诺。</td></tr>
+    <tr><td><b>题库质量体检</b></td><td>对外包或自建评估集做 <code>lint</code>，先查出多少题是显式指名、多少题存在实体冲突，再决定这套题能不能用来跑分。</td></tr>
+    <tr><td><b>重构与迁移验证</b></td><td>换向量库、换 embedding 模型、改分块策略后，用 <code>diff</code> 逐条比对，而不是只看总分有没有掉。</td></tr>
+    <tr><td><b>第三方评审</b></td><td>只拿到对方的结果文件时，也能独立核算口径差异与虚高量，无需接触其内部代码。</td></tr>
+  </tbody>
+</table>
+
+<p><b>落地门槛极低</b>：不要求改造被测系统，不要求引入任何依赖，
+只需要一个满足 <code>f(query, k)</code> 的函数。仓库内已提供一个连接真实向量库的适配器样例，
+可直接作为接入模板。</p>
+</div>
+
+<!-- ============ 七 ============ -->
+<div class="page">
+<h2>七、开源治理（对应评审维度「开源治理」）</h2>
+
+<h3>7.1 协议与依赖合规</h3>
+<ul>
+  <li><b>项目协议</b>：Apache-2.0，含专利授权条款，允许商业使用与修改。</li>
+  <li><b>运行时依赖</b>：<b>零</b>。纯 Python 标准库实现，不存在第三方运行时依赖，
+      因此不存在传递依赖带来的协议风险。</li>
+  <li><b>示例依赖</b>：真实案例的适配器需要向量库与模型推理环境，共 <b>103 个传递依赖</b>，
+      但<b>不属于本项目运行时依赖，也不随项目分发</b>。</li>
+  <li><b>依赖清单</b>：这 103 个包由程序遍历 <code>importlib.metadata</code> <b>机器生成</b>（非手工整理），
+      许可证字段按 PEP 639 优先级提取，公开在 <code>docs/licenses-deps.txt</code>。</li>
+  <li><b>合规结论</b>：清单中<b>无 GPL / AGPL</b>；MPL-2.0 的三个包（certifi / tqdm / orjson）属
+      文件级 copyleft，不影响 Apache-2.0 分发。</li>
+</ul>
+
+<h3>7.2 社区治理文件</h3>
+<table>
+  <thead><tr><th style="width:30%">文件</th><th>作用</th></tr></thead>
+  <tbody>
+    <tr><td><code>LICENSE</code></td><td>Apache-2.0 全文</td></tr>
+    <tr><td><code>CONTRIBUTING.md</code></td><td>贡献流程、提交信息规范、不接受的范围（明确写着「不接受引入运行时依赖的 PR」）</td></tr>
+    <tr><td><code>GOVERNANCE.md</code></td><td>决策机制与角色定义</td></tr>
+    <tr><td><code>CODE_OF_CONDUCT.md</code></td><td>社区行为准则</td></tr>
+    <tr><td><code>SECURITY.md</code></td><td>漏洞报告渠道（GitHub 私密报告）</td></tr>
+    <tr><td><code>ROADMAP.md</code></td><td>长期规划与验收口径</td></tr>
+    <tr><td><code>CHANGELOG.md</code></td><td>按版本记录变更</td></tr>
+  </tbody>
+</table>
+
+<h3>7.3 质量保障</h3>
+<ul>
+  <li><b>单元测试</b>：34 个用例，零依赖，<b>0.01 秒</b>跑完，覆盖双口径计算、diff 分类、报告渲染等核心路径。</li>
+  <li><b>持续集成</b>：GitHub Actions，每次推送自动执行全量测试。</li>
+  <li><b>可复现性</b>：确定性判定，无随机性、无外部服务依赖，任何机器上结果一致。</li>
+  <li><b>文档规范</b>：指标口径、架构、真实案例、同类对比、许可证各有独立文档，
+      且全部标注「已验证 / 推断」状态，不夸大结论。</li>
+</ul>
+
+<h3>7.4 第三方内容声明</h3>
+<p>真实案例中的评估集为项目作者本人手写，随被测系统以 Apache-2.0 发布；
+文件中仅含题面、期望层、期望目标与分组四个字段，<b>不含任何游戏文本、图像或音频资源</b>
+（实测最长字段 18 个字符）。文中出现的实体名称仅用于指明评测对象，属事实性指代，
+名称权利归其权利人所有。</p>
+</div>
+
+<!-- ============ 八 ============ -->
+<div class="page">
+<h2>八、长期发展规划（对应评审维度「长期发展」）</h2>
+
+<h3>8.1 维护可行性</h3>
+<p>一个单人维护的工具，最容易死于「维护成本高于收益」。本项目在设计阶段就把这一点作为约束：</p>
+<ul>
+  <li><b>无依赖 → 无升级负担。</b>不存在「某个上游库弃坑导致项目无法安装」这一最常见的死法。</li>
+  <li><b>测试秒级 → 改动成本低。</b>34 个用例 0.01 秒跑完，每次改动都能立即验证。</li>
+  <li><b>边界清晰 → 需求不会失控。</b>明确只做检索层审计，不做 LLM 打分、不做答案质量、
+      不做 Agent 行为评测，避免演变成一个什么都做一点的半成品。</li>
+</ul>
+
+<h3>8.2 路线图（每项均可独立验收）</h3>
+<table>
+  <thead><tr><th style="width:30%">方向</th><th>内容</th><th style="width:20%">验收标准</th></tr></thead>
+  <tbody>
+    <tr><td>框架适配器</td><td>LangChain / LlamaIndex / Chroma 结果适配层，降低接入成本</td><td>附可运行示例</td></tr>
+    <tr><td>报告形态</td><td>HTML 单文件报告，便于贴进 PR 与分享</td><td>无外部资源依赖</td></tr>
+    <tr><td>CI 集成</td><td><code>--fail-on-regression N</code> 阈值退出码；PR 自动评论退化清单</td><td>示例工作流可跑通</td></tr>
+    <tr><td>题库健康度</td><td>基于 diff 的题库漂移监测，识别长期未被命中的僵尸题</td><td>能在真实题集上产出报告</td></tr>
+  </tbody>
+</table>
+
+<h3>8.3 风险与应对</h3>
+<table>
+  <thead><tr><th style="width:26%">风险</th><th>应对</th></tr></thead>
+  <tbody>
+    <tr><td>单人维护，精力有限</td><td>刻意保持零依赖与小代码量（约 2,300 行含测试）；路线图只收可独立验收的小块，不做大重构</td></tr>
+    <tr><td>无社区支撑</td><td>以「治理意识」替代「社区规模」：贡献机制、决策规则、Issue/PR 响应预期均已书面化，任何人可据此接手</td></tr>
+    <tr><td>被误认为通用评测框架</td><td>文档中反复明确边界（只审检索层，不评答案质量），并与 RAGAS / DeepEval 划清分工，避免能力虚标</td></tr>
+    <tr><td>指标口径被质疑</td><td>所有口径定义均在 <code>docs/metrics.md</code> 中公开，且以真实案例证明与主流做法等价</td></tr>
+  </tbody>
+</table>
+
+<h2>九、快速验证方式</h2>
+<pre>git clone https://github.com/MaPleooo9/RAGAudit.git
+cd RAGAudit
+python examples/toy/run_demo.py</pre>
+<p>无需 <code>pip install</code>，无需向量库与 embedding 模型，3 秒内在
+<code>examples/toy/out/</code> 生成三份报告（跑分 / 消融 / 回归对比）。</p>
+
+<table>
+  <thead><tr><th style="width:34%">命令</th><th>作用</th></tr></thead>
+  <tbody>
+    <tr><td><code>ragaudit lint -s suite.json</code></td><td>评估集自检与泄漏画像</td></tr>
+    <tr><td><code>ragaudit run -s suite.json -r mod:fn</code></td><td>跑分并生成双口径报告</td></tr>
+    <tr><td><code>ragaudit ablate -s suite.json -v variants.py</code></td><td>消融矩阵与归因</td></tr>
+    <tr><td><code>ragaudit diff --base a.json --cur b.json</code></td><td>两次运行逐条对比</td></tr>
+  </tbody>
+</table>
+
+<h2>十、附录：文档索引</h2>
+<table>
+  <thead><tr><th style="width:34%">文档</th><th>内容</th></tr></thead>
+  <tbody>
+    <tr><td><code>README.md</code></td><td>项目定位、四个功能、接入方式、设计取舍</td></tr>
+    <tr><td><code>docs/metrics.md</code></td><td>每个指标的计算方式与设计理由</td></tr>
+    <tr><td><code>docs/architecture.md</code></td><td>模块划分与数据流</td></tr>
+    <tr><td><code>docs/case-navirag.md</code></td><td>真实案例：审计一个 94.1% 的系统</td></tr>
+    <tr><td><code>docs/comparison.md</code></td><td>与 RAGAS / DeepEval 的完整对照</td></tr>
+    <tr><td><code>docs/licenses.md</code></td><td>依赖许可证清单与合规结论</td></tr>
+    <tr><td><code>ROADMAP.md</code></td><td>长期规划</td></tr>
+  </tbody>
+</table>
+
+<div class="foot">
+  RAGAudit · 检索评测审计工具　|　Apache-2.0　|　本文档数据均来自仓库内可复现产物
+</div>
+</div>
+
+</body>
+</html>
