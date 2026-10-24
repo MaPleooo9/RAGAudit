@@ -22,14 +22,22 @@
 |---|---|---|---|
 | 1 | `01-cover.png` | 封面 | 打开 `docs/RAGAudit-作品介绍文档.pdf` 第 1 页整屏截图 |
 | 2 | `02-run.png` | 终端执行结果 | 终端跑 `python examples/toy/run_demo.py`，截**最后 20 行**，必须含末尾「报告已写入 D:\PROJECT\RAGAudit\examples\toy\out」那三行 |
-| 3 | `03-dual.png` | toy 双口径分数 | `examples/toy/out/report.md` 顶部，v1 / v2 两行分数 |
-| 4 | `04-ablate.png` | toy 消融 | `examples/toy/out/ablation.md` 的表格段 |
-| 5 | `05-diff.png` | toy 回归 | `examples/toy/out/diff.md` 的「弄坏」段 |
-| 6 | `06-real-score.png` | 真实案例分数 | `examples/elden-ring/out/report.md` 分数表 |
-| 7 | `07-real-ablate.png` | 真实案例消融 | `examples/elden-ring/out/ablation.md`（17.6% / 12.9% 那两行） |
-| 8 | `08-leak.png` | 泄漏画像 | 同 `report.md` 的泄漏等级 / 分组段 |
-| 9 | `09-implicit.png` | 描述提问组 | 同文件里「描述提问」那一组的命中情况 |
+| 3 | `03-dual.png` | toy 双口径 | `examples/toy/out/report.md` **第 9–20 行**（结论 + 整体指标表，12 行） |
+| 4 | `04-ablate.png` | toy 消融矩阵 | `examples/toy/out/ablation.md` **第 37–44 行**（消融与归因表，8 行） |
+| 5 | `05-diff.png` | toy 回归退化清单 | `examples/toy/out/diff.md` **第 38–46 行**（回归对比 + 退化清单，9 行） |
+| 6 | `06-real-score.png` | 真实案例分数 | `examples/elden-ring/out/report.md` **第 9–20 行**（94.1% / 92.9%，12 行） |
+| 7 | `07-real-ablate.png` | 真实案例消融 | `examples/elden-ring/out/ablation.md` **第 45–55 行**（17.6% / 12.9%，11 行） |
+| 8 | `08-leak.png` | 泄漏画像 | `examples/elden-ring/out/report.md` **第 22–35 行**（显式指名占 64%） |
+| 9 | `09-implicit.png` | 描述提问组 | `examples/elden-ring/out/report.md` **第 46–57 行**（6 条 / 50%） |
 | 10 | `10-tests.png` | 单测与仓库 | 终端跑 `python -m unittest discover -s tests -p "test_*.py"`，截 `Ran 34 tests ... OK` |
+
+### 跳行号的方法
+
+VS Code 里按 `Ctrl` + `G`，输入行号（如 `9`）回车，光标直接跳到那一行。
+再配合 `Ctrl` + `B` 收起左侧边栏，一屏能多显示近 1/3。
+
+**截图时不要截整个窗口**，用 `Win` + `Shift` + `S` 拖框只框住那段内容——
+一张图高度控制在 500–700 像素左右最舒服，太高在视频里字会变小。
 
 **命名必须带 `01-` 到 `10-` 前缀**——导入剪辑软件后会自动按文件名排序，
 省掉手工排顺序的时间。
