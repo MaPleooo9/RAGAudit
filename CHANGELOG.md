@@ -5,6 +5,17 @@
 
 ## [Unreleased]
 
+### 计划中
+- LangChain / LlamaIndex / Chroma 结果适配器
+- HTML 报告输出
+- GitHub Action：PR 中自动贴出退化清单
+- `--fail-on-regression N` 阈值退出码
+
+## [0.2.0] - 2026-10-24
+
+第一个接上真实系统的版本：从「能跑演示」变成「审计过真实项目」。
+本版没有改判定口径，新增的是可验证性——一个真实案例、一份同类对照、一份依赖合规清单。
+
 ### Added
 
 **真实案例（NaviRAG）**
@@ -19,16 +30,14 @@
 - `docs/licenses.md` + `docs/licenses-deps.txt`：运行时零依赖说明、真实案例 103 个
   传递依赖的许可证清单（机器生成）、无 GPL/AGPL 的合规结论
 
+### Changed
+- 项目定位表述统一为「检索评测审计工具」，README、CLI 描述、包文档、`pyproject` 四处一致
+- 单元测试由 33 条增至 34 条
+
 ### Fixed
 - 回归对比报告只渲染 `fixed` / `broke`，`improved` / `worsened`（仍命中但排名变动）
   被算出来后丢弃。真实案例里正好踩中：关掉别名表后 3 条坏掉、1 条 rank 2→1、
   1 条 rank 1→4，后两条原本完全不可见
-
-### 计划中
-- LangChain / LlamaIndex / Chroma 结果适配器
-- HTML 报告输出
-- GitHub Action：PR 中自动贴出退化清单
-- `--fail-on-regression N` 阈值退出码
 
 ## [0.1.0] - 2026-10-23
 
@@ -80,5 +89,6 @@
 - 报告仅 markdown
 - 单维护者
 
-[Unreleased]: https://github.com/MaPleooo9/RAGAudit/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/MaPleooo9/RAGAudit/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/MaPleooo9/RAGAudit/releases/tag/v0.2.0
 [0.1.0]: https://github.com/MaPleooo9/RAGAudit/releases/tag/v0.1.0

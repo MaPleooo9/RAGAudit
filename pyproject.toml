@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ragaudit"
-version = "0.1.0"
+version = "0.2.0"
 description = "检索评测审计工具：不给你的 RAG 又一个分数，而是审计这个分数能不能信"
 readme = "README.md"
 requires-python = ">=3.10"
